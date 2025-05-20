@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { motion } from 'framer-motion';
@@ -6,7 +5,7 @@ import { Image, Box, GalleryVertical, Gem } from 'lucide-react';
 
 const PortfolioSection = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
-  
+
   const clients = [
     {
       name: "JetSynthesys",
@@ -58,7 +57,7 @@ const PortfolioSection = () => {
   const mousePosition = useMouseParallax();
   
   return (
-    <section id="portfolio" className="section-padding relative overflow-hidden">
+    <section id="portfolio" className="section-padding relative overflow-hidden" style={{ backgroundColor: "#D9D9D9" }}>
       <div className="absolute inset-0 tech-grid opacity-30"></div>
       
       {/* Floating Elements */}
@@ -80,7 +79,7 @@ const PortfolioSection = () => {
         <div className="text-center mb-16 reveal">
           <h2 className="text-3xl md:text-4xl font-bold text-createc-blue mb-2 animate-float">Our Work</h2>
           <div className="w-24 h-1 bg-createc-purple mx-auto rounded-full"></div>
-          <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-6 text-gray-700 max-w-2xl mx-auto">
             Explore our portfolio of innovative digital solutions for clients across industries
           </p>
         </div>

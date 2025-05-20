@@ -15,6 +15,7 @@ import Projects from '@/components/projects';
 import TestimonialCarousel from '@/components/TestimonialSection';
 import Website from '@/components/website';
 import HeroSectionAlt from '@/components/herosectionalt';
+import SolutionS from '@/components/SolutionS';
 
 const Index = () => {
   // Enhanced scroll animation function
@@ -115,7 +116,7 @@ const Index = () => {
       
       <AboutSection />
       
-      <ServicesSection />
+      <SolutionS />
       <OurServicesSection />
       <ProcessSection />
       <TeamSection />

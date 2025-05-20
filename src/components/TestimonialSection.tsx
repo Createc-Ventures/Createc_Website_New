@@ -59,26 +59,26 @@ export default function DualTestimonialSlider() {
 
   return (
     <section id="testimonials">
-    <div className="relative py-20 px-4 sm:px-10  overflow-hidden bg-black">
+    <div className="relative py-20 px-4 sm:px-10 overflow-hidden bg-[#D9D9D9]">
       {/* Left & Right Nav Buttons */}
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16 reveal">
           <h2 className="text-3xl md:text-4xl font-bold text-createc-blue mb-2 animate-float">Don't Just Take Our Word for It...</h2>
           <div className="w-24 h-1 bg-createc-purple mx-auto rounded-full"></div>
-          <p className="mt-6 text-white max-w-2xl mx-auto">
+          <p className="mt-6 #2C3E50 max-w-2xl mx-auto">
             Discover how our solutions made a difference—straight from the voices of those who experienced the magic.
           </p>
         </div>
       </div>
       <button
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl bg-createc-blue transition hover:bg-createc-purple p-2 rounded-full shadow z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2 #2C3E50 text-3xl bg-createc-blue transition hover:bg-createc-purple p-2 rounded-full shadow z-10"
       >
         ❮
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl bg-createc-blue transition hover:bg-createc-purple p-2 rounded-full shadow z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2 #2C3E50 text-3xl bg-createc-blue transition hover:bg-createc-purple p-2 rounded-full shadow z-10"
       >
         ❯
       </button>
@@ -96,7 +96,7 @@ export default function DualTestimonialSlider() {
             {currentTestimonials.map((t, i) => (
               <div key={i} className="flex flex-col items-start">
                 {/* Card */}
-                <div className="bg-white/10 w-[450px] backdrop-blur-md rounded-xl shadow-lg p-6 text-white z-10 border border-white/20">
+                <div className="bg-white/10 w-[450px] backdrop-blur-md rounded-xl shadow-lg p-6 #2C3E50 z-10 border border-white/20">
                   “{t.quote}”
                 </div>
 

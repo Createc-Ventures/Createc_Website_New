@@ -32,7 +32,7 @@ const ContactSection = () => {
   };
   
   return (
-    <section id="contact" className="section-padding relative bg-black">
+    <section id="contact" className="section-padding relative bg-[#D9D9D9]">
       {/* Tech grid background */}
       <div className="absolute inset-0 tech-grid opacity-30"></div>
       

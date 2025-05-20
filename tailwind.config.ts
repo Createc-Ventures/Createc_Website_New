@@ -70,6 +70,9 @@ export default {
                     dark: '#1A1F2C',
 					charcoal: '#2c3e50',
 					platinum: '#d9d9d9',
+					animation: {
+                   "spin-slow": "spin 18s linear infinite",
+                      },
                 }
 			},
 			borderRadius: {

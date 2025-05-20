@@ -104,7 +104,7 @@ export default function PixelStreamingTabs() {
         </AnimatePresence>
       </div>
 
-      {/* Bottom Tab Bar 
+      
       <div className="absolute bottom-0 w-full flex justify-center z-10 h-16  px-2 md:px-0">
         {tabs.map(tab => (
           <button
@@ -117,7 +117,7 @@ export default function PixelStreamingTabs() {
             {tab.label}
           </button>
         ))}
-      </div>*/}
-    </div>
+      </div>
+          </div>
   );
 }

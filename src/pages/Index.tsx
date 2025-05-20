@@ -118,12 +118,12 @@ const Index = () => {
       
       <SolutionS />
       <OurServicesSection />
-      <ProcessSection />
+      
       <TeamSection />
       
       <Projects />
       <Website />
-      <TestimonialCarousel />
+      
       <ContactSection />
       <Footer />
     </div>

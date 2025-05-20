@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#D9D9D9] text-black py-12">
+    <footer className="bg-createc-orange text-black py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
@@ -50,27 +50,12 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-              <ul className="space-y-2">
-                {[
-                  'Custom Software Development', 
-                  'Web & Mobile App Development', 
-                  'AI & Blockchain Solutions', 
-                  'Digital Marketing', 
-                  'Social Media Management'
-                ].map((item, index) => (
-                  <li key={index} className="text-sm text-gray-800">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            
           </div>
         </div>
 
         <div className="mt-12 text-center text-sm text-gray-800">
-          <p>© {new Date().getFullYear()} CREATEC. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} CREATEC VENTURES. All rights reserved.</p>
         </div>
       </div>
     </footer>

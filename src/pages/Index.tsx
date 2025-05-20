@@ -16,7 +16,8 @@ import TestimonialCarousel from '@/components/TestimonialSection';
 import Website from '@/components/website';
 import HeroSectionAlt from '@/components/herosectionalt';
 import SolutionS from '@/components/SolutionS';
-
+import BlogSection from "@/components/BlogSection";
+import AboutUs from "@/components/AboutUs";
 const Index = () => {
   // Enhanced scroll animation function
   useEffect(() => {
@@ -114,7 +115,7 @@ const Index = () => {
       
       
       
-      <AboutSection />
+      <AboutUs />
       
       <SolutionS />
       <OurServicesSection />
@@ -123,7 +124,7 @@ const Index = () => {
       
       <Projects />
       <Website />
-      <TestimonialCarousel />
+      <BlogSection />
       <ContactSection />
       <Footer />
     </div>

@@ -25,7 +25,7 @@ const features = [
 const SmartSolutions = () => {
   return (
     <section className="relative py-20 px-4" style={{ backgroundColor: "#D9D9D9" }}>
-      {/* 📱 Blurred iPhone Background */}
+      
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-[400px] md:w-[500px] opacity-20 blur-xl pointer-events-none z-0">
         <img
           src="/iphone-mockup.png"

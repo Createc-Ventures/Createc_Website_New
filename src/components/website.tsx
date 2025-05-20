@@ -16,7 +16,7 @@ const InfiniteWebsiteCarousel: React.FC = () => {
   const items: Website[] = [...websites, ...websites]; // Duplicated for looping
 
   return (
-    <div className="w-full  py-12 flex flex-col items-center gap-10 bg-black">
+    <div className="w-full  py-12 flex flex-col items-center gap-10 bg-createc-platinum">
       {/* Keyframe animation and hover pause */}
       <style>
         {`
@@ -46,7 +46,7 @@ const InfiniteWebsiteCarousel: React.FC = () => {
           {items.map((site, idx) => (
             <div
               key={idx}
-              className="w-[500px] h-[400px] mx-6 rounded-2xl overflow-hidden  bg-black"
+              className="w-[500px] h-[400px] mx-6 rounded-2xl overflow-hidden  bg-createc-platinum"
             >
               <div className="p-4 font-semibold text-2xl text-[#ec7c30]">{site.title}</div>
               <iframe

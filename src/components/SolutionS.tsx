@@ -58,11 +58,7 @@ const SmartSolutions = () => {
               {feature.title}
             </h3>
             <p className="text-gray-700 text-sm text-center mb-6">{feature.description}</p>
-            <div className="flex justify-center">
-              <button className="bg-[#ec7c30] text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-[#fcb508] transition duration-300 shadow-md">
-                {feature.cta}
-              </button>
-            </div>
+            
           </div>
         ))}
       </div>

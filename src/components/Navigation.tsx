@@ -37,7 +37,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="#home" className="text-createc-orange font-montserrat font-bold text-2xl bg-[#2c3e50] p-2 text-center rounded-2xl">
+          <a href="#home" className="text-createc-orange font-montserrat font-bold text-2xl bg-createc-platinum p-2 text-center rounded-2xl">
             CREATEC
           </a>
         </div>

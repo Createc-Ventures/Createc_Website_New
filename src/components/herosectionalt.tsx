@@ -33,26 +33,29 @@ export default function PixelStreamingTabs() {
   const activeContent = tabs.find(tab => tab.id === activeTab);
 
   useEffect(() => {
+    // Auto-switch tabs every 10 seconds
     const tabInterval = setInterval(() => {
       setActiveTab(prev => (prev === 'marketing' ? 'tech' : 'marketing'));
     }, 10000);
 
+    // Auto-scroll texts every 2 seconds
     const scrollInterval = setInterval(() => {
       setScrollingIndex(prev => (prev + 1) % activeContent.scrollingTexts.length);
     }, 2000);
 
+    // Cleanup intervals on component unmount
     return () => {
       clearInterval(tabInterval);
       clearInterval(scrollInterval);
     };
-  }, [activeContent]);
+  }, [activeTab, activeContent.scrollingTexts.length]); // Add activeTab to dependencies to restart scrollInterval when tab changes
 
   return (
-    <div id='home' className="relative w-full h-screen overflow-hidden">
+    <div id='home' className="relative w-full h-screen overflow-hidden font-inter">
       {/* Video Background */}
       <AnimatePresence mode="wait">
         <motion.video
-          key={activeTab}
+          key={activeTab} // Key changes to re-mount video on tab switch for smooth transition
           autoPlay
           loop
           muted
@@ -72,7 +75,7 @@ export default function PixelStreamingTabs() {
       <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-12 text-white z-10">
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeTab + '-text'}
+            key={activeTab + '-text'} // Key changes to re-mount text content on tab switch
             initial={{ y: '100%', opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: '-100%', opacity: 0 }}
@@ -104,20 +107,20 @@ export default function PixelStreamingTabs() {
         </AnimatePresence>
       </div>
 
-      
-      <div className="absolute bottom-0 w-full flex justify-center z-10 h-16  px-2 md:px-0">
+      {/* Tab Buttons */}
+      <div className="absolute bottom-0 w-full flex justify-center z-10 h-8 px-2 md:px-0">
         {tabs.map(tab => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`w-1/2 h-full text-sm md:text-xl font-semibold transition duration-300 rounded-t-md flex items-center justify-center gap-2 ${
+            onMouseEnter={() => setActiveTab(tab.id)} // Change to onMouseEnter for hover effect
+            className={`relative flex-1 h-full text-sm md:text-xl font-semibold transition duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === tab.id ? 'bg-white text-black' : 'bg-white/30 text-white hover:bg-white/50'
             }`}
           >
-            {tab.label}
+            <span className="relative z-10">{tab.label}</span> {/* Ensure text is above wave */}
           </button>
         ))}
       </div>
-          </div>
+    </div>
   );
 }

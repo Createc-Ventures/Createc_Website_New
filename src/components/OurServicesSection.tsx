@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"; // Optional utility for class name merging
 const data = {
   marketing: [
     { label: 'Brand Strategy', image: 'https://via.placeholder.com/800x600' },
-    { label: 'Social Media Management', image: 'https://via.placeholder.com/800x600' },
+    { label: 'Social Media Management', image: 'public/assets/img/social.png' },
     { label: 'Content Marketing', image: 'https://via.placeholder.com/800x600' },
     { label: 'Paid Ads', image: 'https://via.placeholder.com/800x600' },
     { label: 'SEO', image: 'https://via.placeholder.com/800x600' },
@@ -13,8 +13,8 @@ const data = {
   ],
   tech: [
     { label: 'Blockchain', image: 'https://www.shutterstock.com/image-illustration/2d-illustration-cloud-computing-concept-600nw-1458581246.jpg' },
-    { label: 'AI & Machine Learning', image: 'https://sidgs.com/wp-content/uploads/2023/01/Top-Trends-To-Watch-out-In-Artificial-Intelligence-AI-in-2023-SID-Global-Solutions.png' },
-    { label: 'Mobile App Development', image: 'https://via.placeholder.com/800x600' },
+    { label: 'AI & Machine Learning', image: 'public/assets/img/AI.png' },
+    { label: 'Mobile App Development', image: 'public/assets/img/app.png' },
     { label: 'Web & Mobile Apps', image: 'https://via.placeholder.com/800x600' },
     { label: 'API Development', image: 'https://via.placeholder.com/800x600' },
     { label: 'SaaS Solutions', image: 'https://via.placeholder.com/800x600' },
@@ -50,7 +50,7 @@ export default function HoverImageTabs() {
           Comprihensive solutions tailored to your needs, from branding to tech innovations.
         </p>
         <div className="mt-6 flex justify-center">
-          <div className="relative inline-flex bg-gray-700 rounded-full p-1">
+          <div className="relative inline-flex bg-createc-charcoal rounded-full p-1">
             {['marketing', 'tech'].map((tab) => (
               <button
                 key={tab}
@@ -62,8 +62,8 @@ export default function HoverImageTabs() {
                 className={cn(
                   "min-w-[120px] px-6 py-3 rounded-full text-lg font-medium transition-all duration-300",
                   activeTab === tab
-                    ? 'bg-white text-black shadow-lg'
-                    : 'text-gray-300 hover:bg-gray-600 hover:text-white',
+                    ? 'bg-createc-platinum text-createc-orange shadow-lg'
+                    : 'text-createc-yellow  hover:text-white',
                   'relative z-10'
                 )}
               >
@@ -100,7 +100,7 @@ export default function HoverImageTabs() {
               }}
             >
               <link rel="preload" href={bgImage} as="image" />
-              <div className="absolute inset-0 bg-createc-platinum bg-opacity-50" />
+              <div className="absolute inset-0 bg-opacity-50" />
             </motion.div>
           )}
         </AnimatePresence>

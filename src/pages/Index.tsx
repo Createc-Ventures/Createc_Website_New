@@ -124,7 +124,7 @@ const Index = () => {
       
       <Projects />
       <Website />
-      <TestimonialCarousel />
+      <BlogSection />
       <ContactSection />
       <Footer />
     </div>

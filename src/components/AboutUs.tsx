@@ -24,34 +24,37 @@ const AboutSection = () => {
         </div>
 
         {/* Planetary System */}
-        <div className="relative w-[600px] h-[600px] flex items-center justify-center">
+        <div className="relative w-[400px] h-[400px] flex items-center justify-center ml-36">
           {/* Central Circle - Solution */}
-          <div className="absolute w-32 h-32 bg-[#f7b500] rounded-full flex items-center justify-center shadow-xl z-10">
-            <span className="text-xl font-bold text-gray-800">Solution</span>
+          <div className="absolute w-32 h-32 rounded-full bg-gradient-to-tr from-yellow-300 via-yellow-500 to-yellow-700 shadow-[inset_0_0_20px_rgba(255,255,255,0.4),0_12px_20px_rgba(0,0,0,0.4)] border-4 border-yellow-600 flex items-center justify-center z-20">
+            <span className="text-xl font-bold text-white drop-shadow-lg">Solution</span>
           </div>
 
-          {/* Orbiting Wrapper */}
+          {/* Orbit Ring (behind orbiting items but visible) */}
+          <div className="absolute w-[400px] h-[400px] rounded-full border border-gray-700 opacity-30 blur-[1px] z-10" />
+
+          {/* Orbiting Circles */}
           <motion.div
-            className="absolute w-[600px] h-[600px]"
+            className="absolute w-[400px] h-[400px] z-30"
             animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
             style={{
               transformOrigin: "center center",
             }}
           >
-            {/* Innovation (top) */}
-            <div className="absolute top-[-48px] left-1/2 -translate-x-1/2 w-24 h-24 bg-[#fa7d09] rounded-full flex items-center justify-center shadow-md">
-              <span className="text-sm font-medium text-black">Innovation</span>
+            {/* Innovation */}
+            <div className="absolute top-[-48px] left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-gradient-to-br from-orange-200 via-orange-500 to-orange-700 shadow-[inset_0_0_15px_rgba(255,255,255,0.3),0_10px_20px_rgba(0,0,0,0.4)] border-[3px] border-orange-700 flex items-center justify-center">
+              <span className="text-sm font-semibold text-white drop-shadow-md">Innovation</span>
             </div>
 
-            {/* Growth (bottom) */}
-            <div className="absolute bottom-[-48px] left-1/2 -translate-x-1/2 w-24 h-24 bg-[#fa7d09] rounded-full flex items-center justify-center shadow-md">
-              <span className="text-sm font-medium text-black">Growth</span>
+            {/* Growth */}
+            <div className="absolute bottom-[-48px] left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-gradient-to-br from-orange-200 via-orange-500 to-orange-700 shadow-[inset_0_0_15px_rgba(255,255,255,0.3),0_10px_20px_rgba(0,0,0,0.4)] border-[3px] border-orange-700 flex items-center justify-center">
+              <span className="text-sm font-semibold text-white drop-shadow-md">Growth</span>
             </div>
           </motion.div>
 
-          {/* Orbit Ring for visual */}
-          <div className="absolute w-[600px] h-[600px] border border-black rounded-full z-0" />
+          {/* Optional glow aura around system */}
+          <div className="absolute w-[500px] h-[500px] rounded-full bg-yellow-100 opacity-20 blur-3xl z-0" />
         </div>
       </div>
     </section>

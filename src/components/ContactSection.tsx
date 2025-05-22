@@ -32,13 +32,13 @@ const ContactSection = () => {
   };
   
   return (
-    <section id="contact" className="section-padding relative bg-[#D9D9D9]">
+    <section id="contact" className="section-padding relative bg-createc-platinum ">
       {/* Tech grid background */}
       <div className="absolute inset-0 tech-grid opacity-30"></div>
       
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-createc-blue mb-2">Let's Connect</h2>
+          <h2 className="text-4xl md:text-4xl font-bold text-createc-blue mb-2">Let's Connect</h2>
           <div className="w-24 h-1 bg-createc-purple mx-auto rounded-full"></div>
         </div>
         
@@ -123,7 +123,7 @@ const ContactSection = () => {
             
             {/* Contact Form */}
             <div className="md:w-3/5 p-12">
-              <h3 className="font-montserrat font-bold text-2xl text-createc-blue mb-6">Send us a message</h3>
+              <h3 className="font-montserrat font-bold text-2xl text-createc-orange mb-6">Send us a message</h3>
               
               <form onSubmit={handleSubmit}>
                 <div className="mb-6">

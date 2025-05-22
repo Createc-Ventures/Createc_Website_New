@@ -37,9 +37,11 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="#home" className="text-createc-orange font-montserrat font-bold text-2xl bg-createc-platinum p-2 text-center rounded-2xl">
-            CREATEC
+          <a href="#home" className="font-montserrat font-bold text-2xl bg-createc-platinum p-2 text-center rounded-2xl">
+            <span className="text-black">CREA</span>
+            <span className="text-createc-orange">TEC</span>
           </a>
+
         </div>
 
         {/* Desktop Navigation */}

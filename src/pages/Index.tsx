@@ -15,6 +15,7 @@ import Projects from '@/components/projects';
 import TestimonialCarousel from '@/components/TestimonialSection';
 import Website from '@/components/website';
 import HeroSectionAlt from '@/components/herosectionalt';
+import AboutSectionNew from '@/components/aboutusnew';
 import SolutionS from '@/components/SolutionS';
 import BlogSection from "@/components/BlogSection";
 import AboutUs from "@/components/AboutUs";
@@ -112,10 +113,10 @@ const Index = () => {
       `}</style>
       <Navigation />
       <HeroSectionAlt />
+      <AboutSectionNew />
       
       
       
-      <AboutUs />
       
       <SolutionS />
       <OurServicesSection />

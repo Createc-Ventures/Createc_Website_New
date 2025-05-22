@@ -56,10 +56,10 @@ const BlogSection: React.FC = () => {
       <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-[#ec7c30] rounded-full blur-3xl opacity-20 z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        <h2 className="text-4xl md:text-4xl font-bold text-createc-blue mb-2">
           Latest Insights
         </h2>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+        <p className="text-gray-600 text- max-w-2xl mx-auto">
           Actionable ideas, expert strategies, and the latest innovations—straight from our digital minds.
         </p>
       </div>

@@ -1,3 +1,4 @@
+import { m } from "framer-motion";
 import React from "react";
 
 const TeamSection = () => {
@@ -5,6 +6,7 @@ const TeamSection = () => {
     {
       name: "Apoorva Bordoloi",
       role: "Co-Founder & CTO",
+      link: "https://www.linkedin.com/in/apoorva-bordoloi/",
       image:
         "https://images.squarespace-cdn.com/content/v1/5e335c197ce81d501c607a07/43a23995-70da-44ce-a4cb-a37df62aea6c/male-professional-headshot-tips-mens-corporate-headshots-guide.jpg",
       description:
@@ -13,12 +15,16 @@ const TeamSection = () => {
     {
       name: "Ranjit Dhoran",
       role: "Co-Founder & CEO",
+      link: "https://www.linkedin.com/in/ranjit-dhoran17/",
       image:
         "https://images.squarespace-cdn.com/content/v1/5e335c197ce81d501c607a07/43a23995-70da-44ce-a4cb-a37df62aea6c/male-professional-headshot-tips-mens-corporate-headshots-guide.jpg",
-      description: "Bringing 6+ years of experience in product, operations, marketing, and growth; driving strategy and execution to scale impactful solutions."    },
+      description:
+        "Bringing 6+ years of experience in product, operations, marketing, and growth; driving strategy and execution to scale impactful solutions.",
+    },
     {
       name: "Shivam Lingade",
       role: "CMO",
+      link: "https://www.linkedin.com/in/shivam-lingade-996b12215/",
       image:
         "https://images.squarespace-cdn.com/content/v1/5e335c197ce81d501c607a07/43a23995-70da-44ce-a4cb-a37df62aea6c/male-professional-headshot-tips-mens-corporate-headshots-guide.jpg",
       description:
@@ -52,8 +58,7 @@ const TeamSection = () => {
               overflow-hidden cursor-pointer
               transform transition duration-500
               hover:scale-105
-              hover:shadow-[0_0_25px_rgba(236, 124, 48,0.7)]
-              hover:animate-pulse"
+              hover:shadow-[0_0_25px_rgba(236,124,48,0.7)]"
               style={{ willChange: "transform" }}
             >
               <div className="relative h-72 overflow-hidden rounded-t-xl">
@@ -73,19 +78,20 @@ const TeamSection = () => {
                 <p className="text-gray-700 text-sm">{member.description}</p>
 
                 <div className="mt-4 flex space-x-3">
-                  {/* Social icons - placeholders */}
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-createc-orange hover:text-white transition-colors"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
+                  {member.link && (
+                    <a
+                      href={member.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-createc-orange hover:text-white transition-colors"
                     >
-                      <path d="M12 0c-6.628 0-12 5.373-12 12s5.372 12 12 12 12-5.373 12-12-5.372-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
-                    </svg>
-                  </a>
+                      <img
+                        src="/assets/img/linedin.svg"
+                        alt="LinkedIn"
+                        className="w-4"
+                      />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -93,9 +99,9 @@ const TeamSection = () => {
         </div>
       </div>
 
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 w-1/4 h-1/4 bg-createc-yellow opacity-10 rounded-bl-full"></div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-createc-orange opacity-10 rounded-tr-full"></div>
+   
+      
+      
     </section>
   );
 };

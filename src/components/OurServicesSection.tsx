@@ -4,21 +4,26 @@ import { cn } from "@/lib/utils"; // Optional utility for class name merging
 
 const data = {
   marketing: [
-    { label: 'Brand Strategy', image: 'https://via.placeholder.com/800x600' },
-    { label: 'Social Media Management', image: 'public/assets/img/social.png' },
-    { label: 'Content Marketing', image: 'https://via.placeholder.com/800x600' },
-    { label: 'Paid Ads', image: 'https://via.placeholder.com/800x600' },
-    { label: 'SEO', image: 'https://via.placeholder.com/800x600' },
-    { label: 'Conversation Optimization', image: 'https://via.placeholder.com/800x600' },
+    { label: 'Brand Strategy', image: '/assets/img/brand_stratagy.png' },
+    { label: 'Social Media Management', image: '/assets/img/social.png' },
+    { label: 'Content Marketing', image: 'https://via.placeholder.com/800x600?text=Content+Marketing' },
+    { label: 'Paid Ads', image: 'https://via.placeholder.com/800x600?text=Paid+Ads' },
+    { label: 'SEO', image: 'https://via.placeholder.com/800x600?text=SEO' },
+    { label: 'Conversation Optimization', image: 'https://via.placeholder.com/800x600?text=Optimization' },
   ],
   tech: [
-    { label: 'Blockchain', image: 'https://www.shutterstock.com/image-illustration/2d-illustration-cloud-computing-concept-600nw-1458581246.jpg' },
-    { label: 'AI & Machine Learning', image: 'public/assets/img/AI.png' },
-    { label: 'Mobile App Development', image: 'public/assets/img/app.png' },
-    { label: 'Web & Mobile Apps', image: 'https://via.placeholder.com/800x600' },
-    { label: 'API Development', image: 'https://via.placeholder.com/800x600' },
-    { label: 'SaaS Solutions', image: 'https://via.placeholder.com/800x600' },
+    { label: 'Blockchain', image: 'https://via.placeholder.com/800x600?text=Blockchain' },
+    { label: 'AI & Machine Learning', image: 'https://via.placeholder.com/800x600?text=AI+ML' },
+    { label: 'Mobile App Development', image: 'https://via.placeholder.com/800x600?text=App+Dev' },
+    { label: 'Web & Mobile Apps', image: 'https://via.placeholder.com/800x600?text=Web+Apps' },
+    { label: 'API Development', image: 'https://via.placeholder.com/800x600?text=API+Dev' },
+    { label: 'SaaS Solutions', image: 'https://via.placeholder.com/800x600?text=SaaS' },
   ],
+};
+
+const defaultImages = {
+  marketing: '/assets/img/M_Def.png',
+  tech: 'https://via.placeholder.com/1200x800?text=Tech+Default',
 };
 
 const transition = {
@@ -29,17 +34,23 @@ const transition = {
 };
 
 export default function HoverImageTabs() {
-  const [activeTab, setActiveTab] = useState('marketing');
+  const [activeTab, setActiveTab] = useState<'marketing' | 'tech'>('marketing');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [bgImage, setBgImage] = useState<string | null>(null);
+  const [bgImage, setBgImage] = useState<string>(defaultImages['marketing']);
   const items = data[activeTab];
 
-  // Only update image on hover
+  // Set background to hovered item
   useEffect(() => {
     if (hoveredIndex !== null) {
       setBgImage(items[hoveredIndex].image);
     }
-  }, [hoveredIndex, items]);
+  }, [hoveredIndex]);
+
+  // Reset background on tab change
+  useEffect(() => {
+    setHoveredIndex(null);
+    setBgImage(defaultImages[activeTab]);
+  }, [activeTab]);
 
   return (
     <div className="w-full min-h-screen flex flex-col">
@@ -47,23 +58,19 @@ export default function HoverImageTabs() {
       <div className="bg-createc-platinum py-10 px-4 z-20 relative text-center">
         <h2 className="text-4xl font-bold text-black mb-2">Our Services for Your Brand</h2>
         <p className="text-lg text-black max-w-2xl mx-auto">
-          Comprihensive solutions tailored to your needs, from branding to tech innovations.
+          Comprehensive solutions tailored to your needs, from branding to tech innovations.
         </p>
         <div className="mt-6 flex justify-center">
           <div className="relative inline-flex bg-createc-charcoal rounded-full p-1">
             {['marketing', 'tech'].map((tab) => (
               <button
                 key={tab}
-                onClick={() => {
-                  setActiveTab(tab);
-                  setHoveredIndex(null);
-                  setBgImage(null);
-                }}
+                onClick={() => setActiveTab(tab as 'marketing' | 'tech')}
                 className={cn(
                   "min-w-[120px] px-6 py-3 rounded-full text-lg font-medium transition-all duration-300",
                   activeTab === tab
                     ? 'bg-createc-platinum text-createc-orange shadow-lg'
-                    : 'text-createc-yellow  hover:text-white',
+                    : 'text-createc-yellow hover:text-white',
                   'relative z-10'
                 )}
               >
@@ -71,7 +78,7 @@ export default function HoverImageTabs() {
               </button>
             ))}
             <motion.div
-              className="absolute inset-0  rounded-full shadow-md"
+              className="absolute inset-0 rounded-full shadow-md"
               style={{
                 left: activeTab === 'marketing' ? '0%' : '50%',
                 width: '50%',
@@ -98,13 +105,9 @@ export default function HoverImageTabs() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
-            >
-              <link rel="preload" href={bgImage} as="image" />
-              <div className="absolute inset-0 bg-opacity-50" />
-            </motion.div>
+            />
           )}
         </AnimatePresence>
-        {!bgImage && <div className="absolute inset-0 bg-createc-platinum z-0" />}
 
         {/* Text Labels */}
         <div className="relative z-10 flex items-center justify-between h-full px-8 py-20">

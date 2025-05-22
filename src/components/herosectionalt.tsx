@@ -114,7 +114,7 @@ export default function PixelStreamingTabs() {
             key={tab.id}
             onMouseEnter={() => setActiveTab(tab.id)} // Change to onMouseEnter for hover effect
             className={`relative flex-1 h-full text-sm md:text-xl font-semibold transition duration-300 flex items-center justify-center overflow-hidden ${
-              activeTab === tab.id ? 'bg-white text-black' : 'bg-white/30 text-white hover:bg-white/50'
+              activeTab === tab.id ? 'bg-white text-black' : 'bg-white/30 text-black hover:bg-white/50'
             }`}
           >
             <span className="relative z-10">{tab.label}</span> {/* Ensure text is above wave */}

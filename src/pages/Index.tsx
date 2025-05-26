@@ -16,6 +16,7 @@ import TestimonialCarousel from '@/components/TestimonialSection';
 import Website from '@/components/website';
 import HeroSectionAlt from '@/components/herosectionalt';
 import AboutSectionNew from '@/components/aboutusnew';
+import ProjectScroll from '@/components/project_scroll';
 import SolutionS from '@/components/SolutionS';
 import BlogSection from "@/components/BlogSection";
 import AboutUs from "@/components/AboutUs";
@@ -123,9 +124,10 @@ const Index = () => {
       
       <TeamSection />
       
+      
       <Projects />
       <Website />
-      <BlogSection />
+      
       <ContactSection />
       <Footer />
     </div>

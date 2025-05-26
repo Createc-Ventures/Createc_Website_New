@@ -4,8 +4,8 @@ import { Instagram } from "lucide-react";
 
 const videoCards = [
   {
-    src: "/assets/vid/4.mp4",
-    title: "JetSynthesys",
+    src: "/assets/vid/5.mp4",
+    title: "AAXGAMING",
     subtitle: "Custom Auction System",
     instagram: "#",
   },

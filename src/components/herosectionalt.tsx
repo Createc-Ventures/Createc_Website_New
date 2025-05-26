@@ -9,7 +9,7 @@ const tabs = [
     scrollingTexts: ['Engage', 'Promote', 'Connect', 'Inspire'],
     content: {
       title: 'Marketing',
-      subtitle: 'Placeholder for marketing content Placeholder for marketing content Placeholder for marketing content Placeholder for marketing content',
+      subtitle: 'Marketing that moves, turning insights into impact. We build bold campaigns that captivate and convert.',
       intro: ''
     },
   },
@@ -20,7 +20,7 @@ const tabs = [
     scrollingTexts: ['Code', 'Build', 'Deploy', 'Scale'],
     content: {
       title: 'Technology',
-      subtitle: 'Placeholder for technology content Placeholder for technology content Placeholder for technology content Placeholder for technology content',
+      subtitle: 'Smart tech. Real results. From code to cloud, we power digital innovation.',
       intro: ''
     },
   }

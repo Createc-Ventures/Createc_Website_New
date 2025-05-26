@@ -4,26 +4,26 @@ import { cn } from "@/lib/utils"; // Optional utility for class name merging
 
 const data = {
   marketing: [
-    { label: 'Brand Strategy', image: '/assets/img/brand_stratagy.png' },
-    { label: 'Social Media Management', image: '/assets/img/social.png' },
-    { label: 'Content Marketing', image: 'https://via.placeholder.com/800x600?text=Content+Marketing' },
-    { label: 'Paid Ads', image: 'https://via.placeholder.com/800x600?text=Paid+Ads' },
-    { label: 'SEO', image: 'https://via.placeholder.com/800x600?text=SEO' },
-    { label: 'Conversation Optimization', image: 'https://via.placeholder.com/800x600?text=Optimization' },
+    { label: 'Product marketing', image: '/assets/img/product.png' },
+    { label: 'Brand management', image: '/assets/img/Brand.png' },
+    { label: 'Seo and paid ads', image: '/assets/img/SEO.png' },
+    { label: 'Content management', image: '/assets/img/content.png' },
+    { label: 'Marketing automation', image: '/assets/img/auto.png' },
+    { label: 'User acquisition and growth', image: '/assets/img/user.png' },
   ],
   tech: [
-    { label: 'Blockchain', image: 'https://via.placeholder.com/800x600?text=Blockchain' },
-    { label: 'AI & Machine Learning', image: 'https://via.placeholder.com/800x600?text=AI+ML' },
-    { label: 'Mobile App Development', image: 'https://via.placeholder.com/800x600?text=App+Dev' },
-    { label: 'Web & Mobile Apps', image: 'https://via.placeholder.com/800x600?text=Web+Apps' },
-    { label: 'API Development', image: 'https://via.placeholder.com/800x600?text=API+Dev' },
-    { label: 'SaaS Solutions', image: 'https://via.placeholder.com/800x600?text=SaaS' },
+    { label: 'AI & Blockchain Development ', image: '/assets/img/blockchain.png' },
+    { label: 'Full Stack Software Solutions', image: '/assets/img/full.png' },
+    { label: 'Mobile & Web App Development', image: '/assets/img/web.png' },
+    { label: 'Product & Saas Solution', image: '/assets/img/saas.png' },
+    { label: 'Research and emerging tech', image: '/assets/img/emerging.png' },
+    { label: 'System Architecture and Designing', image: '/assets/img/system.png' },
   ],
 };
 
 const defaultImages = {
   marketing: '/assets/img/M_Def.png',
-  tech: 'https://via.placeholder.com/1200x800?text=Tech+Default',
+  tech: '/assets/img/T_Def.png',
 };
 
 const transition = {
@@ -124,9 +124,9 @@ export default function HoverImageTabs() {
                     "text-3xl md:text-4xl cursor-pointer font-normal transition-all duration-500",
                     hoveredIndex === index
                       ? activeTab === 'tech'
-                        ? 'text-createc-yellow -translate-x-12'
-                        : 'text-createc-yellow translate-x-12'
-                      : 'text-createc-orange',
+                        ? 'text-createc-charcoal font-bold -translate-x-12'
+                        : 'text-createc-charcoal font-bold translate-x-12'
+                      : 'text-createc-charcoal font-bold',
                     activeTab === 'tech' ? 'pr-24' : 'pl-24'
                   )}
                 >

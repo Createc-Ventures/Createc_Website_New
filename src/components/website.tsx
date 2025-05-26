@@ -2,61 +2,83 @@ import React from 'react';
 
 const videos = [
   {
-    src: 'https://www.morexasset.com/',
-    label: 'Website 1'
+    src: '/assets/vid/web1.mp4',
+    label: 'Morex Asset Management',
+    subtitle: 'Modern Real Estate Platform',
+    url: 'https://www.morexasset.com/',
   },
   {
-    src: 'https://tailwindcss.com/plus',
-    label: 'Website 2'
+    src: '/assets/vid/web2.mp4',
+    label: 'BTS AI',
+    subtitle: 'Tailwind UI Showcase',
+    url: 'https://tailwindcss.com/plus',
   },
   {
-    src: 'https://example3.com',
-    label: 'Website 3'
+    src: '/assets/vid/web3.mp4',
+    label: 'Website 3',
+    subtitle: 'E-Commerce Demo',
+    url: 'https://example3.com',
   },
   {
-    src: 'https://example4.com',
-    label: 'Website 4'
+    src: '/assets/vid/4.mp4',
+    label: 'AAXGAMING',
+    subtitle: 'Custom Auction System',
+    url: 'https://example4.com',
   },
 ];
 
 export default function VideoCarousel() {
-  const repeatedVideos = Array(100).fill(videos).flat(); // Repeat enough times to create seamless loop
+  const duplicatedVideos = [...videos, ...videos]; // Duplicate for seamless loop
 
   return (
     <div className="relative overflow-hidden w-full bg-createc-platinum py-8">
       <div
-        className="flex gap-4 whitespace-nowrap animate-[scrollRight_100s_linear_infinite]"
-        style={{
-          animationName: 'scrollRight',
-          animationDuration: '100s',
-          animationTimingFunction: 'linear',
-          animationIterationCount: 'infinite',
-        }}
+        className="flex gap-4 whitespace-nowrap animate-scrollRight"
+        style={{ width: `${duplicatedVideos.length * 700 + duplicatedVideos.length * 16}px` }}
       >
-        {repeatedVideos.map((video, index) => (
-          <div
+        {duplicatedVideos.map((video, index) => (
+          <a
+            href={video.url}
+            target="_blank"
+            rel="noopener noreferrer"
             key={index}
-            className="relative w-[700px] h-[400px] flex-shrink-0 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-105"
+            className="relative w-[700px] h-[400px] flex-shrink-0 overflow-hidden rounded-lg group"
           >
-            <iframe
+            <video
               src={video.src}
-              className="w-full h-full border-none"
-              title={`iframe-${index}`}
-              loading="lazy"
-            ></iframe>
-            <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-sm px-3 py-1 rounded pointer-events-none">
-              {video.label}
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            <div className="absolute bottom-4 left-4 text-white z-10">
+              <div className="text-createc-orange bg-opacity-60 px-3 py-1 rounded text-lg font-semibold">
+                {video.label}
+              </div>
+              <div className="text-createc-orange bg-opacity-50 px-3 py-1 rounded text-sm mt-1">
+                {video.subtitle}
+              </div>
             </div>
-          </div>
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex justify-center items-center opacity-0 group-hover:opacity-100">
+              <div className="text-createc-yellow px-5 py-2 rounded-full text-xl font-medium">
+                Visit
+              </div>
+            </div>
+          </a>
         ))}
       </div>
 
-      {/* Inline keyframes for scroll animation */}
+      {/* Keyframes for left-to-right scroll */}
       <style>
         {`
           @keyframes scrollRight {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(0); }
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+          }
+
+          .animate-scrollRight {
+            animation: scrollRight 40s linear infinite;
           }
         `}
       </style>

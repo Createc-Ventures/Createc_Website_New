@@ -61,13 +61,13 @@ const TeamSection = () => {
               hover:shadow-[0_0_25px_rgba(236,124,48,0.7)]"
               style={{ willChange: "transform" }}
             >
-              <div className="relative h-72 overflow-hidden rounded-t-xl">
+              <div className="relative h-64 overflow-hidden rounded-t-xl">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover "
+                  className="w-full h-56 object-cover "
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-createc-orange/70 to-transparent opacity-0 hover:opacity-60 transition-opacity duration-500 rounded-t-xl"></div>
+                <div className="absolute h-56 inset-0 bg-gradient-to-t from-createc-orange/70 to-transparent opacity-0 hover:opacity-60 transition-opacity duration-500 rounded-t-xl"></div>
               </div>
 
               <div className="p-6 text-gray-900">
@@ -83,7 +83,7 @@ const TeamSection = () => {
                       href={member.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-createc-orange hover:text-white transition-colors"
+                      className="w-7 h-7 rounded-full bg-white flex items-center justify-center hover:bg-createc-orange hover:text-white transition-colors"
                     >
                       <img
                         src="/assets/img/linedin.svg"

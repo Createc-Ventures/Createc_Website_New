@@ -8,8 +8,6 @@ const clientLogos = [
   "/assets/img/logo/3.png",
   
   "/assets/img/logo/4.png",
-  
-  "/assets/img/logo/6.png",
 ];
 
 // Repeat logos for seamless infinite effect
@@ -24,7 +22,7 @@ const OurClientsCarousel = () => {
           {repeatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 border  w-64 h-48 flex items-center justify-center"
+              className="flex-shrink-0   w-64 h-48 flex items-center justify-center"
               style={{ marginRight: '0px' }}
             >
               <img

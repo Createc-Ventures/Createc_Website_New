@@ -18,7 +18,7 @@ const AboutUs = () => {
         <div className="md:w-1/2 relative">
           <div className="border-r-[6px] border-b-[6px] border-createc-yellow">
             <video 
-              src="\assets\vid\CREATEC.mp4" // replace with the correct path to your video
+              src="\assets\vid\CREATEC.mp4"
               autoPlay
               muted
               loop

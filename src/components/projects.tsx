@@ -6,25 +6,26 @@ const videoCards = [
   {
     src: "/assets/vid/5.mp4",
     title: "AAXGAMING",
-    subtitle: "Custom Auction System",
     instagram: "#",
   },
   {
     src: "/assets/vid/2.mp4",
     title: "Skor AI",
-    subtitle: "User Acquisition",
     instagram: "/assets/vid/2.mp4",
   },
   {
-    src: "/assets/vid/3.mp4",
-    title: "Skor AI",
-    subtitle: "QA Product Testing",
+    src: "/assets/vid/7.mp4",
+    title: "GAME DOME",
     instagram: "/assets/vid/3.mp4",
   },
   {
     src: "/assets/vid/1.mp4",
     title: "Game Dome",
-    subtitle: "Brand Growth",
+    instagram: "https://www.instagram.com/gamedome_/?hl=en",
+  },
+  {
+    src: "/assets/vid/6.mp4",
+    title: "Game Dome",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },
 ];
@@ -45,42 +46,43 @@ export default function HoverVideoCarousel() {
           </div>
         </div>
 
-        <div>
-          <motion.div
-            className="flex gap-6"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          >
-            {[...videoCards, ...videoCards].map((card, index) => (
-              <div
-                key={index}
-                className="relative group rounded-2xl overflow-hidden shadow-md w-[300px] h-[450px] flex-shrink-0 transform transition-transform duration-300 hover:scale-105 mx-3"
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        >
+          {[...videoCards, ...videoCards].map((card, index) => (
+            <div
+              key={index}
+              className="relative group rounded-2xl overflow-hidden shadow-md w-[300px] h-[450px] flex-shrink-0 transform transition-transform duration-300 hover:scale-105 mx-3"
+            >
+              <video
+                src={card.src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+              />
+
+              {/* Instagram icon centered */}
+              <a
+                href={card.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
-                <video
-                  src={card.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-4 left-4 right-4 transition-all duration-300 group-hover:bottom-20">
-                  <h2 className="text-xl font-bold text-[#ec7c30]">{card.title}</h2>
-                  <p className="text-sm text-[#fcb508]">{card.subtitle}</p>
-                  <a
-                    href={card.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs"
-                  >
-                    <Instagram color="#ec7c30" className="inline mr-1" />
-                  </a>
-                </div>
+                <Instagram size={40} color="#ec7c30" />
+              </a>
+
+              {/* Title bottom-left */}
+              <div className="absolute bottom-4 left-4 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h2 className="text-lg font-bold text-[#ec7c30]">{card.title}</h2>
               </div>
-            ))}
-          </motion.div>
-        </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

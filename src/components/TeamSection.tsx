@@ -8,7 +8,7 @@ const TeamSection = () => {
       role: "Co-Founder & CTO",
       link: "https://www.linkedin.com/in/apoorva-bordoloi/",
       image:
-        "https://images.squarespace-cdn.com/content/v1/5e335c197ce81d501c607a07/43a23995-70da-44ce-a4cb-a37df62aea6c/male-professional-headshot-tips-mens-corporate-headshots-guide.jpg",
+        "assets/img/1.png",
       description:
         "With 4 years of experience in software development, data science, AI engineering, and system architecture; driving the tech vision and building robust, scalable solutions.",
     },
@@ -17,7 +17,7 @@ const TeamSection = () => {
       role: "Co-Founder & CEO",
       link: "https://www.linkedin.com/in/ranjit-dhoran17/",
       image:
-        "https://images.squarespace-cdn.com/content/v1/5e335c197ce81d501c607a07/43a23995-70da-44ce-a4cb-a37df62aea6c/male-professional-headshot-tips-mens-corporate-headshots-guide.jpg",
+        "assets/img/3.png",
       description:
         "Bringing 6+ years of experience in product, operations, marketing, and growth; driving strategy and execution to scale impactful solutions.",
     },
@@ -26,7 +26,7 @@ const TeamSection = () => {
       role: "CMO",
       link: "https://www.linkedin.com/in/shivam-lingade-996b12215/",
       image:
-        "https://images.squarespace-cdn.com/content/v1/5e335c197ce81d501c607a07/43a23995-70da-44ce-a4cb-a37df62aea6c/male-professional-headshot-tips-mens-corporate-headshots-guide.jpg",
+        "assets/img/2.png",
       description:
         "With 5 years of expertise in team management, marketing, content, and growth strategy; leading initiatives that drive brand presence and business expansion.",
     },
@@ -35,8 +35,8 @@ const TeamSection = () => {
   return (
     <section
       id="team"
-      className="section-padding relative"
-      style={{ backgroundColor: "#D9D9D9" }}
+      className="section-padding relative bg-createc-platinum"
+      
     >
       <div className="container mx-auto">
         <div className="text-center mb-16">
@@ -65,7 +65,7 @@ const TeamSection = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover "
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-createc-orange/70 to-transparent opacity-0 hover:opacity-60 transition-opacity duration-500 rounded-t-xl"></div>
               </div>

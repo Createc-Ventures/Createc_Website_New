@@ -46,7 +46,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <address className="not-italic text-sm text-gray-800 space-y-2">
                 <p>Viman Nagar, Pune 411014</p>
-                <p>Email: O@createc.in</p>
+                <p>Email: Info@createc.in</p>
                 <p>Phone: +91 7057731716</p>
               </address>
             </div>

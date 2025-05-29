@@ -10,20 +10,14 @@ const videos = [
   {
     src: '/assets/vid/web2.mp4',
     label: 'BTS AI',
-    subtitle: 'Tailwind UI Showcase',
-    url: 'https://tailwindcss.com/plus',
+    subtitle: 'Landing Page',
+    url: 'https://www.btsai.net/',
   },
   {
     src: '/assets/vid/web3.mp4',
-    label: 'Website 3',
-    subtitle: 'E-Commerce Demo',
-    url: 'https://example3.com',
-  },
-  {
-    src: '/assets/vid/4.mp4',
-    label: 'AAXGAMING',
-    subtitle: 'Custom Auction System',
-    url: 'https://example4.com',
+    label: 'Game Dome',
+    subtitle: 'Landing Page',
+    url: 'https://www.instagram.com/gamedome_/?hl=en',
   },
 ];
 

@@ -1,26 +1,50 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Globe, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, Globe, MapPin, Instagram, Linkedin } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    setError('');
+
+    const params = new URLSearchParams();
+    params.append('name', formData.name);
+    params.append('email', formData.email);
+    params.append('message', formData.message);
+
+    try {
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbwlBGSaamJrAv8wcLLdV4r4GhGLSRxdpyD8aYOYzqdPYvqddOM1ay9iPPFTjciIcoeUZQ/exec',
+        {
+          method: 'POST',
+          body: params,
+        }
+      );
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError('Something went wrong. Please try again later.');
+        console.error('Response not ok:', await response.text());
+      }
+    } catch (err) {
+      setError('Failed to send your message. Please check your internet connection or try again later.');
+      console.error('Error submitting form:', err);
+    } finally {
       setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 1500);
+    }
   };
 
   return (
@@ -34,7 +58,7 @@ const ContactSection = () => {
 
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row bg-[#242124] rounded-xl backdrop-blur-md shadow-xl overflow-hidden">
-            
+
             {/* Left - Contact Info */}
             <div className="md:w-2/5 gradient-bg p-12 text-white">
               <h3 className="font-montserrat font-bold text-2xl mb-6">Contact Information</h3>
@@ -83,7 +107,6 @@ const ContactSection = () => {
               <div className="mt-12">
                 <h4 className="font-montserrat font-semibold mb-4">Connect With Us</h4>
                 <div className="flex space-x-4">
-                  
                   <a href="https://www.instagram.com/createc.solutions/?hl=en" target="_blank" rel="noreferrer"
                      className="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-40">
                     <Instagram size={20} />
@@ -139,11 +162,20 @@ const ContactSection = () => {
                     required
                   ></textarea>
                 </div>
-                {submitted ? (
+
+                {submitted && (
                   <div className="p-4 bg-green-100 text-green-700 rounded-lg">
                     Thank you for your message! We'll get back to you soon.
                   </div>
-                ) : (
+                )}
+
+                {error && (
+                  <div className="p-4 bg-red-100 text-red-700 rounded-lg mt-4">
+                    {error}
+                  </div>
+                )}
+
+                {!submitted && (
                   <button
                     type="submit"
                     className="gradient-bg text-white font-montserrat font-semibold px-8 py-3 rounded-lg hover-scale disabled:opacity-70"

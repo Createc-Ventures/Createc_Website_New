@@ -20,6 +20,7 @@ import ProjectScroll from '@/components/project_scroll';
 import SolutionS from '@/components/SolutionS';
 import BlogSection from "@/components/BlogSection";
 import AboutUs from "@/components/AboutUs";
+import Client from "@/components/ourclient";
 const Index = () => {
   // Enhanced scroll animation function
   useEffect(() => {
@@ -114,7 +115,8 @@ const Index = () => {
       `}</style>
       <Navigation />
       <HeroSectionAlt />
-      <AboutSectionNew />
+      
+      <AboutUs />
       
       
       
@@ -126,7 +128,7 @@ const Index = () => {
       
       
       <Projects />
-      <Website />
+      <Client />
       
       <ContactSection />
       <Footer />

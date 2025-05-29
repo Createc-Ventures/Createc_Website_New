@@ -14,10 +14,10 @@ const data = {
   tech: [
     { label: 'AI & Blockchain Development ', image: '/assets/img/blockchain.png' },
     { label: 'Full Stack Software Solutions', image: '/assets/img/full.png' },
-    { label: 'Mobile & Web App Development', image: '/assets/img/web.png' },
+    { label: 'Mobile & Web Development', image: '/assets/img/web.png' },
     { label: 'Product & Saas Solution', image: '/assets/img/saas.png' },
     { label: 'Research and emerging tech', image: '/assets/img/emerging.png' },
-    { label: 'System Architecture and Designing', image: '/assets/img/system.png' },
+    { label: 'System Architecture', image: '/assets/img/system.png' },
   ],
 };
 

@@ -14,13 +14,16 @@ const AboutUs = () => {
           </p>
         </div>
 
-        {/* Right Image Section */}
+        {/* Right Video Section */}
         <div className="md:w-1/2 relative">
-          <div className="border-r-[6px] border-b-[6px] border-createc-yellow ">
-            <img 
-              src="assets\img\about.jpg" // replace with your image path
-              alt="Gaming Bot" 
-              className=" w-full object-cover"
+          <div className="border-r-[6px] border-b-[6px] border-createc-yellow">
+            <video 
+              src="\assets\vid\CREATEC.mp4" // replace with the correct path to your video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full object-cover"
             />
           </div>
         </div>

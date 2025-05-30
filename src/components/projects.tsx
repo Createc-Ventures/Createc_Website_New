@@ -4,27 +4,27 @@ import { Instagram } from "lucide-react";
 
 const videoCards = [
   {
-    src: "/assets/vid/5.mp4",
+    src: "assets/vid/5.mp4",
     title: "AAXGAMING",
-    instagram: "#",
+    instagram: "https://www.instagram.com/aaxgaming/?hl=en",
   },
   {
-    src: "/assets/vid/2.mp4",
+    src: "assets/vid/2.mp4",
     title: "Skor AI",
-    instagram: "/assets/vid/2.mp4",
+    instagram: "https://www.instagram.com/theskorai/?hl=en",
   },
   {
-    src: "/assets/vid/7.mp4",
+    src: "assets/vid/7.mp4",
     title: "GAME DOME",
-    instagram: "/assets/vid/3.mp4",
+    instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },
   {
-    src: "/assets/vid/1.mp4",
+    src: "assets/vid/1.mp4",
     title: "Game Dome",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },
   {
-    src: "/assets/vid/6.mp4",
+    src: "assets/vid/6.mp4",
     title: "Game Dome",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },

@@ -5,6 +5,7 @@ import { Instagram } from "lucide-react";
 const videoCards = [
   {
     src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/AA1.mp4",
+    
     title: "AAXGAMING",
     instagram: "https://www.instagram.com/aaxgaming/?hl=en",
   },

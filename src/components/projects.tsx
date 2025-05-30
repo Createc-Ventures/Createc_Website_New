@@ -4,27 +4,27 @@ import { Instagram } from "lucide-react";
 
 const videoCards = [
   {
-    src: "assets/vid/AA1.mp4",
+    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/AA1.mp4",
     title: "AAXGAMING",
     instagram: "https://www.instagram.com/aaxgaming/?hl=en",
   },
   {
-    src: "assets/vid/skor1.mp4",
+    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/skor1.mp4",
     title: "Skor AI",
     instagram: "https://www.instagram.com/theskorai/?hl=en",
   },
   {
-    src: "assets/vid/gamedome1.mp4",
+    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/gamedome1.mp4",
     title: "GAME DOME",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },
   {
-    src: "assets/vid/gamedome2.mp4",
+    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/gamedome2.mp4",
     title: "Game Dome",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },
   {
-    src: "assets/vid/gamedome3.mp4",
+    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/gamedome3.mp4",
     title: "Game Dome",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },

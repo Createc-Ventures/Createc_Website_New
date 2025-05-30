@@ -2,12 +2,12 @@ import React from 'react';
 
 // List of client logos
 const clientLogos = [
-  "/assets/img/logo/1.png",
-  "/assets/img/logo/2.png",
-  "/assets/img/logo/5.png",
-  "/assets/img/logo/3.png",
+  "assets/img/logo/1.png",
+  "assets/img/logo/2.png",
+  "assets/img/logo/5.png",
+  "assets/img/logo/3.png",
   
-  "/assets/img/logo/4.png",
+  "assets/img/logo/4.png",
 ];
 
 // Repeat logos for seamless infinite effect

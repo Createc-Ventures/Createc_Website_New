@@ -2,22 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from "@/lib/utils";
 
-const data = {
+type Item = {
+  label: string;
+  image: string;
+  mobileImage: string;
+};
+
+const data: Record<'marketing' | 'tech', Item[]> = {
   marketing: [
-    { label: 'Product marketing', image: '/assets/img/product.png' },
-    { label: 'Brand management', image: '/assets/img/Brand.png' },
-    { label: 'Seo and paid ads', image: '/assets/img/SEO.png' },
-    { label: 'Content management', image: '/assets/img/content.png' },
-    { label: 'Marketing automation', image: '/assets/img/auto.png' },
-    { label: 'User acquisition and growth', image: '/assets/img/user.png' },
+    { label: 'Product marketing', image: '/assets/img/product.png', mobileImage: '/assets/img/mobile/product.png' },
+    { label: 'Brand management', image: '/assets/img/Brand.png', mobileImage: '/assets/img/mobile/Brand.png' },
+    { label: 'Seo and paid ads', image: '/assets/img/SEO.png', mobileImage: '/assets/img/mobile/SEO.png' },
+    { label: 'Content management', image: '/assets/img/content.png', mobileImage: '/assets/img/mobile/content.png' },
+    { label: 'Marketing automation', image: '/assets/img/auto.png', mobileImage: '/assets/img/mobile/auto.png' },
+    { label: 'User acquisition and growth', image: '/assets/img/user.png', mobileImage: '/assets/img/mobile/user.png' },
   ],
   tech: [
-    { label: 'AI & Blockchain Development ', image: '/assets/img/blockchain.png' },
-    { label: 'Full Stack Software Solutions', image: '/assets/img/full.png' },
-    { label: 'Mobile & Web Development', image: '/assets/img/web.png' },
-    { label: 'Product & Saas Solution', image: '/assets/img/saas.png' },
-    { label: 'Research and emerging tech', image: '/assets/img/emerging.png' },
-    { label: 'System Architecture', image: '/assets/img/system.png' },
+    { label: 'AI & Blockchain Development ', image: '/assets/img/blockchain.png', mobileImage: '/assets/img/mobile/blockchain.png' },
+    { label: 'Full Stack Software Solutions', image: '/assets/img/full.png', mobileImage: '/assets/img/mobile/full.png' },
+    { label: 'Mobile & Web Development', image: '/assets/img/web.png', mobileImage: '/assets/img/mobile/web.png' },
+    { label: 'Product & Saas Solution', image: '/assets/img/saas.png', mobileImage: '/assets/img/mobile/saas.png' },
+    { label: 'Research and emerging tech', image: '/assets/img/emerging.png', mobileImage: '/assets/img/mobile/emerging.png' },
+    { label: 'System Architecture', image: '/assets/img/system.png', mobileImage: '/assets/img/mobile/system.png' },
   ],
 };
 

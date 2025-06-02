@@ -4,20 +4,20 @@ import { cn } from "@/lib/utils"; // Optional utility for class name merging
 
 const data = {
   marketing: [
-    { label: 'Product marketing', image: '/assets/img/product.png' },
-    { label: 'Brand management', image: '/assets/img/Brand.png' },
-    { label: 'Seo and paid ads', image: '/assets/img/SEO.png' },
-    { label: 'Content management', image: '/assets/img/content.png' },
-    { label: 'Marketing automation', image: '/assets/img/auto.png' },
-    { label: 'User acquisition and growth', image: '/assets/img/user.png' },
+    { label: 'Product Marketing', image: '/assets/img/product.png' },
+    { label: 'Brand Management', image: '/assets/img/Brand.png' },
+    { label: 'SEO and Paid Ads', image: '/assets/img/SEO.png' },
+    { label: 'Content Management', image: '/assets/img/content.png' },
+    { label: 'Marketing Automation', image: '/assets/img/auto.png' },
+    { label: 'User Acquisition and Growth', image: '/assets/img/user.png' },
   ],
   tech: [
-    { label: 'AI & Blockchain Development ', image: '/assets/img/blockchain.png' },
-    { label: 'Full Stack Software Solutions', image: '/assets/img/full.png' },
-    { label: 'Mobile & Web Development', image: '/assets/img/web.png' },
-    { label: 'Product & Saas Solution', image: '/assets/img/saas.png' },
-    { label: 'Research and emerging tech', image: '/assets/img/emerging.png' },
-    { label: 'System Architecture', image: '/assets/img/system.png' },
+      { label: 'AI & Blockchain Development ', image: '/assets/img/blockchain.png' },
+      { label: 'R&D on Emerging Technology', image: '/assets/img/emerging.png' },
+      { label: 'System Designs and DevOps', image: '/assets/img/system.png' },
+      { label: 'Mobile & Web Development', image: '/assets/img/web.png' },
+      { label: 'Product & SaaS Solution', image: '/assets/img/saas.png' },
+      { label: 'Full Stack Development', image: '/assets/img/full.png' },
   ],
 };
 

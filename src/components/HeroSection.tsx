@@ -2,8 +2,8 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="w-screen h-screen bg-gray-200 p-6 box-border">
-      <div className="bg-[#2c3e50] text-white rounded-lg w-full h-full flex flex-col justify-center items-center text-center shadow-md">
+    <div className="h-screen bg-gray-200 p-6 box-border">
+      <div className="bg-[#2c3e50] text-white rounded-lg  h-full flex flex-col justify-center items-center text-center shadow-md">
         <h1 className="text-3xl md:text-4xl font-semibold mb-4">
           Crafting Digital Experience that Inspire
         </h1>

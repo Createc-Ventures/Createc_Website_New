@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // Ensure you're using react-router-dom
 
 const allProjects = [
   {
@@ -8,6 +9,7 @@ const allProjects = [
     image: "/assets/img/logo/4.png",
     bgColor: "bg-white",
     textColor: "text-black",
+    link: "/morex",
   },
   {
     title: "Game Dome",
@@ -15,6 +17,7 @@ const allProjects = [
     image: "/assets/img/logo/5.png",
     bgColor: "bg-createc-platinum",
     textColor: "text-white",
+    link: "/gamedome",
   },
   {
     title: "Skor AI",
@@ -22,6 +25,7 @@ const allProjects = [
     image: "/assets/img/logo/1.png",
     bgColor: "bg-gradient-to-r from-black to-orange-500",
     textColor: "text-white",
+    link: "/skorai",
   },
   {
     title: "BTS.AI",
@@ -29,6 +33,7 @@ const allProjects = [
     image: "/assets/img/logo/2.png",
     bgColor: "bg-white",
     textColor: "text-black",
+    link: "/btsai",
   },
   {
     title: "AAX Gaming",
@@ -36,12 +41,13 @@ const allProjects = [
     image: "/assets/img/logo/3.png",
     bgColor: "bg-[#1E1E1E]",
     textColor: "text-white",
+    link: "/aaxgaming",
   },
-  
 ];
 
 const FeaturedProjects = () => {
   const [visibleCount, setVisibleCount] = useState(3);
+  const navigate = useNavigate();
 
   const handleShowMore = () => {
     setVisibleCount(allProjects.length);
@@ -57,13 +63,15 @@ const FeaturedProjects = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <AnimatePresence>
           {allProjects.slice(0, visibleCount).map((project, index) => (
-            <motion.div
+            <motion.button
               key={project.title}
+              onClick={() => navigate(project.link)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
+              whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className={`rounded-lg overflow-hidden ${project.bgColor} ${project.textColor}`}
+              className={`rounded-lg overflow-hidden text-left w-full shadow-md transition-transform duration-300 ${project.bgColor} ${project.textColor}`}
             >
               <div className="h-40 flex items-center justify-center">
                 <img src={project.image} alt={project.title} className="h-40 object-contain" />
@@ -72,7 +80,7 @@ const FeaturedProjects = () => {
                 <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
                 <p className="text-l text-gray-700">{project.description}</p>
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </AnimatePresence>
       </div>
@@ -92,3 +100,4 @@ const FeaturedProjects = () => {
 };
 
 export default FeaturedProjects;
+// This component can be imported and used in your main application file, such as portfolio.tsx

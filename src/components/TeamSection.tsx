@@ -65,9 +65,9 @@ const TeamSection = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-56 object-cover "
+                  className="w-full h-64 object-cover "
                 />
-                <div className="absolute h-56 inset-0 bg-gradient-to-t from-createc-orange/70 to-transparent opacity-0 hover:opacity-60 transition-opacity duration-500 rounded-t-xl"></div>
+                <div className="absolute h-64 inset-0 bg-gradient-to-t from-createc-orange/70 to-transparent opacity-0 hover:opacity-60 transition-opacity duration-500 rounded-t-xl"></div>
               </div>
 
               <div className="p-6 text-gray-900">

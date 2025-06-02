@@ -1,63 +1,84 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from "@/lib/utils"; // Optional utility for class name merging
+import { cn } from "@/lib/utils";
 
 const data = {
   marketing: [
-    { label: 'Product marketing', image: '/assets/img/product.png' },
-    { label: 'Brand management', image: '/assets/img/Brand.png' },
-    { label: 'Seo and paid ads', image: '/assets/img/SEO.png' },
-    { label: 'Content management', image: '/assets/img/content.png' },
-    { label: 'Marketing automation', image: '/assets/img/auto.png' },
-    { label: 'User acquisition and growth', image: '/assets/img/user.png' },
+    { label: 'Product marketing', image: '/assets/img/product.png', mobileImage: '/assets/img/mobile/product.png' },
+    { label: 'Brand management', image: '/assets/img/Brand.png', mobileImage: '/assets/img/mobile/Brand.png' },
+    { label: 'SEO and Paid ads', image: '/assets/img/SEO.png', mobileImage: '/assets/img/mobile/SEO.png' },
+    { label: 'Content management', image: '/assets/img/content.png', mobileImage: '/assets/img/mobile/content.png' },
+    { label: 'Marketing automation', image: '/assets/img/auto.png', mobileImage: '/assets/img/mobile/auto.png' },
+    { label: 'User acquisition and growth', image: '/assets/img/user.png', mobileImage: '/assets/img/mobile/user.png' },
   ],
   tech: [
-    { label: 'AI & Blockchain Development ', image: '/assets/img/blockchain.png' },
-    { label: 'Full Stack Software Solutions', image: '/assets/img/full.png' },
-    { label: 'Mobile & Web Development', image: '/assets/img/web.png' },
-    { label: 'Product & Saas Solution', image: '/assets/img/saas.png' },
-    { label: 'Research and emerging tech', image: '/assets/img/emerging.png' },
-    { label: 'System Architecture', image: '/assets/img/system.png' },
+    { label: 'AI & Blockchain Development', image: '/assets/img/blockchain.png', mobileImage: '/assets/img/mobile/blockchain.png' },
+    { label: 'Full Stack Software Solutions', image: '/assets/img/full.png', mobileImage: '/assets/img/mobile/full.png' },
+    { label: 'Mobile & Web Development', image: '/assets/img/web.png', mobileImage: '/assets/img/mobile/web.png' },
+    { label: 'Product & Saas Solution', image: '/assets/img/saas.png', mobileImage: '/assets/img/mobile/saas.png' },
+    { label: 'Research and emerging tech', image: '/assets/img/emerging.png', mobileImage: '/assets/img/mobile/emerging.png' },
+    { label: 'System Architecture', image: '/assets/img/system.png', mobileImage: '/assets/img/mobile/system.png' },
   ],
 };
 
 const defaultImages = {
   marketing: '/assets/img/M_Def.png',
   tech: '/assets/img/T_Def.png',
+  mobileMarketing: '/assets/img/mobile/M_Def.png',
+  mobileTech: '/assets/img/mobile/Mobile_T_Def.png',
 };
 
 const transition = {
   type: "spring",
   stiffness: 200,
   damping: 30,
-  duration: 0.5
+  duration: 0.5,
 };
 
 export default function HoverImageTabs() {
   const [activeTab, setActiveTab] = useState<'marketing' | 'tech'>('marketing');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [bgImage, setBgImage] = useState<string>(defaultImages['marketing']);
+  const [bgImage, setBgImage] = useState<string>('');
+
+  const isMobile = () => typeof window !== 'undefined' && window.innerWidth < 768;
+
   const items = data[activeTab];
 
-  // Set background to hovered item
-  useEffect(() => {
-    if (hoveredIndex !== null) {
-      setBgImage(items[hoveredIndex].image);
+  const updateImage = (index: number | null) => {
+    if (index === null) {
+      const defaultImg = isMobile()
+        ? activeTab === 'marketing'
+          ? defaultImages.mobileMarketing
+          : defaultImages.mobileTech
+        : defaultImages[activeTab];
+      setBgImage(defaultImg);
+    } else {
+      const selected = items[index];
+      setBgImage(isMobile() ? selected.mobileImage : selected.image);
     }
+  };
+
+  useEffect(() => {
+    updateImage(null); // Set default background when tab changes
+    setHoveredIndex(null);
+  }, [activeTab]);
+
+  useEffect(() => {
+    updateImage(hoveredIndex);
   }, [hoveredIndex]);
 
-  // Reset background on tab change
   useEffect(() => {
-    setHoveredIndex(null);
-    setBgImage(defaultImages[activeTab]);
-  }, [activeTab]);
+    const handleResize = () => updateImage(hoveredIndex);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [hoveredIndex, activeTab]);
 
   return (
     <div className="w-full min-h-screen flex flex-col">
-      {/* Top Section: Heading and Tabs */}
-      <div className="bg-createc-platinum py-10 px-4 z-20 relative text-center">
-        <h2 className="text-4xl font-bold text-black mb-2">Our Services for Your Brand</h2>
-        <p className="text-lg text-black max-w-2xl mx-auto">
+      {/* Top Section */}
+      <div className="bg-createc-platinum py-10 px-4 z-20 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">Our Services for Your Brand</h2>
+        <p className="text-base md:text-lg text-black max-w-2xl mx-auto">
           Comprehensive solutions tailored to your needs, from branding to tech innovations.
         </p>
         <div className="mt-6 flex justify-center">
@@ -67,7 +88,7 @@ export default function HoverImageTabs() {
                 key={tab}
                 onClick={() => setActiveTab(tab as 'marketing' | 'tech')}
                 className={cn(
-                  "min-w-[120px] px-6 py-3 rounded-full text-lg font-medium transition-all duration-300",
+                  "min-w-[100px] px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg rounded-full font-medium transition-all duration-300",
                   activeTab === tab
                     ? 'bg-createc-platinum text-createc-orange shadow-lg'
                     : 'text-createc-yellow hover:text-white',
@@ -89,7 +110,7 @@ export default function HoverImageTabs() {
         </div>
       </div>
 
-      {/* Image Background Section */}
+      {/* Background and Labels */}
       <div className="relative flex-1 overflow-hidden">
         <AnimatePresence>
           {bgImage && (
@@ -109,25 +130,30 @@ export default function HoverImageTabs() {
           )}
         </AnimatePresence>
 
-        {/* Text Labels */}
-        <div className="relative z-10 flex items-center justify-between h-full px-8 py-20">
+        {/* Labels Section */}
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-between h-full px-4 md:px-8 py-10 md:py-20 text-center md:text-left space-y-6 md:space-y-0">
           <div className={cn(
-            "w-full max-w-2xl",
-            activeTab === 'tech' ? "ml-auto text-right" : "mr-auto text-left"
+            "w-full md:max-w-2xl",
+            activeTab === 'tech' ? "md:ml-auto md:text-right" : "md:mr-auto md:text-left"
           )}>
-            <div className="flex flex-col space-y-8">
+            <div className="flex flex-col space-y-4 md:space-y-6">
               {items.map((item, index) => (
                 <div
                   key={index}
-                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseEnter={() => {
+                    if (!isMobile()) setHoveredIndex(index);
+                  }}
+                  onClick={() => {
+                    if (isMobile()) updateImage(index);
+                  }}
                   className={cn(
-                    "text-3xl md:text-4xl cursor-pointer font-normal transition-all duration-500",
+                    "text-lg sm:text-xl md:text-3xl lg:text-4xl cursor-pointer transition-all duration-500",
                     hoveredIndex === index
                       ? activeTab === 'tech'
-                        ? 'text-createc-charcoal font-bold -translate-x-12'
-                        : 'text-createc-charcoal font-bold translate-x-12'
+                        ? 'text-createc-charcoal font-bold md:-translate-x-12'
+                        : 'text-createc-charcoal font-bold md:translate-x-12'
                       : 'text-createc-charcoal font-bold',
-                    activeTab === 'tech' ? 'pr-24' : 'pl-24'
+                    activeTab === 'tech' ? 'md:pr-24' : 'md:pl-24'
                   )}
                 >
                   {item.label}

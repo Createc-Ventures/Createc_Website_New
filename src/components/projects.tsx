@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
+
+
 
 const videoCards = [
   {
     src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/AA1.mp4",
-    
     title: "AAXGAMING",
     instagram: "https://www.instagram.com/aaxgaming/?hl=en",
   },
@@ -47,44 +49,63 @@ export default function HoverVideoCarousel() {
           </div>
         </div>
 
-        <motion.div
-          className="flex gap-6"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        >
-          {[...videoCards, ...videoCards].map((card, index) => (
-            <div
-              key={index}
-              className="relative group rounded-2xl overflow-hidden shadow-md w-[300px] h-[450px] flex-shrink-0 transform transition-transform duration-300 hover:scale-105 mx-3"
-            >
-              <video
-                src={card.src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                className="w-full h-full object-cover"
-              />
+        {/* Desktop: auto-scroll | Mobile: swipe-scroll */}
+        <div className="hidden md:block">
+          <motion.div
+            className="flex gap-6"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          >
+            {[...videoCards, ...videoCards].map((card, index) => (
+              <VideoCard key={index} card={card} />
+            ))}
+          </motion.div>
+        </div>
 
-              {/* Instagram icon centered */}
-              <a
-                href={card.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <Instagram size={40} color="#ec7c30" />
-              </a>
+        <div className="block md:hidden overflow-x-auto">
+          <div className="flex gap-4 px-4 py-2 w-max">
+            {videoCards.map((card, index) => (
+              <VideoCard key={index} card={card} />
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center mt-10 space-x-4">
+          
 
-              {/* Title bottom-left */}
-              <div className="absolute bottom-4 left-4 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h2 className="text-lg font-bold text-[#ec7c30]">{card.title}</h2>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+          <Link to="/portfolio">
+            <button className="bg-gradient-to-r from-createc-orange to-createc-yellow text-white p-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300 flex items-center gap-2">
+              <p className="font-semibold p-2  ">View Our Portfolio</p>
+            </button>
+          </Link>
+        </div>
+
+
       </div>
     </section>
   );
 }
+
+const VideoCard = ({ card }: { card: typeof videoCards[0] }) => (
+  <div className="relative group rounded-2xl overflow-hidden shadow-md w-[300px] h-[450px] flex-shrink-0 transform transition-transform duration-300 md:hover:scale-105">
+    <video
+      src={card.src}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      className="w-full h-full object-cover"
+    />
+    <a
+      href={card.instagram}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      <Instagram size={40} color="#ec7c30" />
+    </a>
+    <div className="absolute bottom-4 left-4 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h2 className="text-lg font-bold text-[#ec7c30]">{card.title}</h2>
+    </div>
+  </div>
+);

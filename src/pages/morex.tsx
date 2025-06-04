@@ -17,18 +17,13 @@ const HomePage = () => {
           Your browser does not support the video tag.
         </video>
         <div className="relative z-10 flex items-center justify-center h-full w-full bg-black/50 text-white px-8">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold mb-4">Welcome to Our Portfolio</h1>
-            <p className="text-xl max-w-2xl mx-auto">
-              Discover innovative projects and creative solutions built by our team.
-            </p>
-          </div>
+          
         </div>
       </header>
 
       {/* SKOR AI Section */}
       <section className="py-16 px-6 md:px-20 bg-white text-[#2c3e50]">
-        <h2 className="text-4xl font-bold mb-4">SKOR AI</h2>
+        <h2 className="text-4xl font-bold mb-4">Morex Asset Management</h2>
         <div className="flex gap-4 mb-6">
           <Instagram size={24} />
           <Linkedin size={24} />

@@ -56,7 +56,7 @@ const ContactSection = () => {
           <div className="w-24 h-1 bg-createc-orange mx-auto rounded-full"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row w-full bg-gray-800 rounded-xl shadow-xl overflow-hidden min-h-[600px]">
 
             {/* Left - Contact Info */}

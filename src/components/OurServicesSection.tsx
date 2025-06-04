@@ -31,7 +31,7 @@ const defaultImages = {
   marketing: '/assets/img/M_Def.png',
   tech: '/assets/img/T_Def.png',
   mobileMarketing: '/assets/img/mobile/M_Def.png',
-  mobileTech: '/assets/img/mobile/Mobile_T_Def.png',
+  mobileTech: '/assets/img/mobile/T_Def.png',
 };
 
 const transition = {
@@ -65,7 +65,7 @@ export default function HoverImageTabs() {
   };
 
   useEffect(() => {
-    updateImage(null); // Set default background when tab changes
+    updateImage(null);
     setHoveredIndex(null);
   }, [activeTab]);
 
@@ -153,7 +153,7 @@ export default function HoverImageTabs() {
                     if (isMobile()) updateImage(index);
                   }}
                   className={cn(
-                    "text-lg sm:text-xl md:text-3xl lg:text-4xl cursor-pointer transition-all duration-500",
+                    "text-2xl sm:text-2xl md:text-3xl lg:text-4xl leading-loose md:leading-snug cursor-pointer transition-all duration-500",
                     hoveredIndex === index
                       ? activeTab === 'tech'
                         ? 'text-createc-charcoal font-bold md:-translate-x-12'

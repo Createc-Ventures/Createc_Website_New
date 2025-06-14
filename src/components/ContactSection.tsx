@@ -12,40 +12,41 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError('');
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setError('');
 
-    const params = new URLSearchParams();
-    params.append('name', formData.name);
-    params.append('email', formData.email);
-    params.append('message', formData.message);
+  try {
+    const response = await fetch('https://sheetdb.io/api/v1/w80tkq0a1o4kf', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        data: {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      }),
+    });
 
-    try {
-      const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbyx5e3q_NDEmzfieKtQayNYNPA7QbUZ8XOl49Q2Vo3WjusBqxJOxEbTDfxNuHWxBPvF/exec',
-        {
-          method: 'POST',
-          body: params,
-        }
-      );
-
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setSubmitted(false), 5000);
-      } else {
-        setError('Something went wrong. Please try again later.');
-        console.error('Response not ok:', await response.text());
-      }
-    } catch (err) {
-      setError('Failed to send your message. Please check your internet connection or try again later.');
-      console.error('Error submitting form:', err);
-    } finally {
-      setIsSubmitting(false);
+    if (response.ok) {
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } else {
+      setError('Something went wrong. Please try again later.');
     }
-  };
+  } catch (err) {
+    setError('Failed to send your message. Please check your internet connection.');
+    console.error('Error:', err);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <section id="contact" className="relative bg-createc-platinum min-h-screen py-16">
@@ -122,7 +123,7 @@ const ContactSection = () => {
             {/* Right - Form */}
             <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
               <h3 className="font-bold text-2xl text-orange-500 mb-6">Send us a message</h3>
-              <div className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-white font-medium mb-2">Name</label>
                   <input
@@ -136,7 +137,7 @@ const ContactSection = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-white font-medium mb-2">Email</label>
                   <input
@@ -150,7 +151,7 @@ const ContactSection = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-white font-medium mb-2">Message</label>
                   <textarea
@@ -179,8 +180,7 @@ const ContactSection = () => {
 
                 <button
                   type="submit"
-                  onClick={handleSubmit}
-                  className="bg-gradient-to-r from-createc-orange to-createc-yellow text-white font-semibold px-8 py-3 rounded-lg  transform hover:scale-105 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                  className="bg-gradient-to-r from-createc-orange to-createc-yellow text-white font-semibold px-8 py-3 rounded-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -193,8 +193,9 @@ const ContactSection = () => {
                     </span>
                   ) : 'Send Message'}
                 </button>
-              </div>
+              </form>
             </div>
+
           </div>
         </div>
       </div>

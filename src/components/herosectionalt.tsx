@@ -5,7 +5,7 @@ const tabs = [
   {
     id: 'marketing',
     label: 'Marketing',
-    video: 'https://createc-web-assets.s3.ap-south-1.amazonaws.com/hero-section/HD_Gradient_Background+02.mp4', // Replace with your actual external video URL
+    video: 'https://createc-web-assets-2.s3.ap-south-1.amazonaws.com/assets/HD_Gradient_Background+02+(1).mp4', // Replace with your actual external video URL
     scrollingTexts: ['Engage', 'Promote', 'Connect', 'Inspire'],
     content: {
       title: 'Marketing',
@@ -16,7 +16,7 @@ const tabs = [
   {
     id: 'tech',
     label: 'Tech',
-    video: 'https://createc-web-assets.s3.ap-south-1.amazonaws.com/hero-section/HD_Gradient_Background+07.mp4', // Replace with your actual external video URL
+    video: 'https://createc-web-assets-2.s3.ap-south-1.amazonaws.com/assets/HD_Gradient_Background+07+(1).mp4', // Replace with your actual external video URL
     scrollingTexts: ['Code', 'Build', 'Deploy', 'Scale'],
     content: {
       title: 'Technology',

@@ -24,10 +24,10 @@ const ContactSection = () => {
 
     try {
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbwlBGSaamJrAv8wcLLdV4r4GhGLSRxdpyD8aYOYzqdPYvqddOM1ay9iPPFTjciIcoeUZQ/exec',
+        'https://script.google.com/macros/s/AKfycbwlBGSaamJrAv8wcLLdV4r4GhGLSRxdpyD8aYOYzqdPYvqddOM1ay9iPPFTjciIcoeUZQ/exec?',
         {
-          method: 'POST',
-          body: params,
+          method: 'GET',
+          body: params
         }
       );
 

@@ -4,28 +4,28 @@ import { Instagram } from "lucide-react";
 
 const videoCards = [
   {
-    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/AA1.mp4",
+    src: "https://createc-web-assets-2.s3.ap-south-1.amazonaws.com/client-videos/AA1+(1).mp4",
     
     title: "AAXGAMING",
     instagram: "https://www.instagram.com/aaxgaming/?hl=en",
   },
   {
-    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/skor1.mp4",
+    src: "https://createc-web-assets-2.s3.ap-south-1.amazonaws.com/client-videos/skor1+(1).mp4",
     title: "Skor AI",
     instagram: "https://www.instagram.com/theskorai/?hl=en",
   },
   {
-    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/gamedome1.mp4",
+    src: "https://createc-web-assets-2.s3.ap-south-1.amazonaws.com/client-videos/gamedome1+(1).mp4",
     title: "GAME DOME",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },
   {
-    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/gamedome2.mp4",
+    src: "https://createc-web-assets-2.s3.ap-south-1.amazonaws.com/client-videos/gamedome2+(1).mp4",
     title: "Game Dome",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },
   {
-    src: "https://createc-web-assets.s3.ap-south-1.amazonaws.com/website-videos/gamedome3.mp4",
+    src: "https://createc-web-assets-2.s3.ap-south-1.amazonaws.com/client-videos/gamedome3+(1).mp4",
     title: "Game Dome",
     instagram: "https://www.instagram.com/gamedome_/?hl=en",
   },

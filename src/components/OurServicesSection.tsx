@@ -10,28 +10,28 @@ type Item = {
 
 const data: Record<'marketing' | 'tech', Item[]> = {
   marketing: [
-    { label: 'Product marketing', image: '/assets/img/product.png', mobileImage: '/assets/img/mobile/product.png' },
-    { label: 'Brand management', image: '/assets/img/Brand.png', mobileImage: '/assets/img/mobile/Brand.png' },
-    { label: 'Seo and paid ads', image: '/assets/img/SEO.png', mobileImage: '/assets/img/mobile/SEO.png' },
-    { label: 'Content management', image: '/assets/img/content.png', mobileImage: '/assets/img/mobile/content.png' },
-    { label: 'Marketing automation', image: '/assets/img/auto.png', mobileImage: '/assets/img/mobile/auto.png' },
-    { label: 'User acquisition and growth', image: '/assets/img/user.png', mobileImage: '/assets/img/mobile/user.png' },
+    { label: 'Product marketing', image: '/assets/img/Services/9.png', mobileImage: '/assets/img/Services/10.png' },
+    { label: 'Brand management', image: '/assets/img/Services/5.png', mobileImage: '/assets/img/Services/6.png' },
+    { label: 'Seo and paid ads', image: '/assets/img/Services/11.png', mobileImage: '/assets/img/Services/12.png' },
+    { label: 'Content management', image: '/assets/img/Services/15.png', mobileImage: '/assets/img/Services/16.png' },
+    { label: 'Marketing automation', image: '/assets/img/Services/7.png', mobileImage: '/assets/img/Services/8.png' },
+    { label: 'User acquisition and growth', image: '/assets/img/Services/13.png', mobileImage: '/assets/img/Services/14.png' },
   ],
   tech: [
-    { label: 'AI & Blockchain Development ', image: '/assets/img/blockchain.png', mobileImage: '/assets/img/mobile/blockchain.png' },
-    { label: 'Full Stack Software Solutions', image: '/assets/img/full.png', mobileImage: '/assets/img/mobile/full.png' },
-    { label: 'Mobile & Web Development', image: '/assets/img/web.png', mobileImage: '/assets/img/mobile/web.png' },
-    { label: 'Product & Saas Solution', image: '/assets/img/saas.png', mobileImage: '/assets/img/mobile/saas.png' },
-    { label: 'Research and emerging tech', image: '/assets/img/emerging.png', mobileImage: '/assets/img/mobile/emerging.png' },
-    { label: 'System Architecture', image: '/assets/img/system.png', mobileImage: '/assets/img/mobile/system.png' },
+    { label: 'AI & Blockchain Development ', image: '/assets/img/Services/21.png', mobileImage: '/assets/img/Services/22.png' },
+    { label: 'Full Stack Software Solutions', image: '/assets/img/Services/19.png', mobileImage: '/assets/img/Services/20.png' },
+    { label: 'Mobile & Web Development', image: '/assets/img/Services/17.png', mobileImage: '/assets/img/Services/18.png' },
+    { label: 'Product & Saas Solution', image: '/assets/img/Services/23.png', mobileImage: '/assets/img/Services/24.png' },
+    { label: 'Research and emerging tech', image: '/assets/img/Services/25.png', mobileImage: '/assets/img/Services/26.png' },
+    { label: 'System Architecture', image: '/assets/img/Services/27.png', mobileImage: '/assets/img/Services/28.png' },
   ],
 };
 
 const defaultImages = {
-  marketing: '/assets/img/M_Def.png',
-  tech: '/assets/img/T_Def.png',
-  mobileMarketing: '/assets/img/mobile/M_Def.png',
-  mobileTech: '/assets/img/mobile/T_Def.png',
+  marketing: '/assets/img/Services/1.png',
+  tech: '/assets/img/Services/3.png',
+  mobileMarketing: '/assets/img/Services/2.png',
+  mobileTech: '/assets/img/Services/4.png',
 };
 
 const transition = {
@@ -47,7 +47,6 @@ export default function HoverImageTabs() {
   const [bgImage, setBgImage] = useState<string>('');
 
   const isMobile = () => typeof window !== 'undefined' && window.innerWidth < 768;
-
   const items = data[activeTab];
 
   const updateImage = (index: number | null) => {
@@ -80,8 +79,7 @@ export default function HoverImageTabs() {
   }, [hoveredIndex, activeTab]);
 
   return (
-    <div className="w-full min-h-screen flex flex-col">
-      {/* Top Section */}
+    <div className="w-full min-h-screen flex flex-col bg-createc-platinum">
       <div className="bg-createc-platinum py-10 px-4 z-20 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">Our Services for Your Brand</h2>
         <p className="text-base md:text-lg text-black max-w-2xl mx-auto">
@@ -116,7 +114,6 @@ export default function HoverImageTabs() {
         </div>
       </div>
 
-      {/* Background and Labels */}
       <div className="relative flex-1 overflow-hidden">
         <AnimatePresence>
           {bgImage && (
@@ -136,36 +133,28 @@ export default function HoverImageTabs() {
           )}
         </AnimatePresence>
 
-        {/* Labels Section */}
-        <div className="relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-between h-full px-4 md:px-8 py-10 md:py-20 text-center md:text-left space-y-6 md:space-y-0">
-          <div className={cn(
-            "w-full md:max-w-2xl",
-            activeTab === 'tech' ? "md:ml-auto md:text-right" : "md:mr-auto md:text-left"
-          )}>
-            <div className="flex flex-col space-y-4 md:space-y-6">
-              {items.map((item, index) => (
-                <div
-                  key={index}
-                  onMouseEnter={() => {
-                    if (!isMobile()) setHoveredIndex(index);
-                  }}
-                  onClick={() => {
-                    if (isMobile()) updateImage(index);
-                  }}
-                  className={cn(
-                    "text-2xl sm:text-2xl md:text-3xl lg:text-4xl leading-loose md:leading-snug cursor-pointer transition-all duration-500",
-                    hoveredIndex === index
-                      ? activeTab === 'tech'
-                        ? 'text-createc-charcoal font-bold md:-translate-x-12'
-                        : 'text-createc-charcoal font-bold md:translate-x-12'
-                      : 'text-createc-charcoal font-bold',
-                    activeTab === 'tech' ? 'md:pr-24' : 'md:pl-24'
-                  )}
-                >
-                  {item.label}
-                </div>
-              ))}
-            </div>
+        <div className={cn(
+          "relative z-10 flex h-full px-4 md:px-8 py-10 md:py-20",
+          activeTab === 'tech' ? 'justify-end text-right' : 'justify-start text-left'
+        )}>
+          <div className="flex flex-col justify-center space-y-6 md:space-y-10 w-full max-w-3xl ml-10">
+            {items.map((item, index) => (
+              <div
+                key={index}
+                onMouseEnter={() => {
+                  if (!isMobile()) setHoveredIndex(index);
+                }}
+                onClick={() => {
+                  if (isMobile()) updateImage(index);
+                }}
+                className={cn(
+                  "text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-relaxed font-bold text-createc-charcoal cursor-pointer transition-all duration-500 transform",
+                  hoveredIndex === index ? (activeTab === 'tech' ? '-translate-x-6' : 'translate-x-6') : ''
+                )}
+              >
+                {item.label}
+              </div>
+            ))}
           </div>
         </div>
       </div>

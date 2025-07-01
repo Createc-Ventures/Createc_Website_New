@@ -73,7 +73,7 @@ export default function HoverVideoCarousel() {
         <div className="flex justify-center mt-10 space-x-4">
 
 
-          <Link to="">
+          <Link to="/portfolio">
             <button className="bg-gradient-to-r from-createc-orange to-createc-yellow text-white p-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300 flex items-center gap-2">
               <p className="font-semibold p-2  ">View Our Portfolio</p>
             </button>

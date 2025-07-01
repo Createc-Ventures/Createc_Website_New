@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const clientLogos = [
   "assets/img/logo/1.png",
@@ -24,7 +24,7 @@ const OurClientsCarousel = () => {
   }, []);
 
   return (
-    <section className="py-10 bg-createc-platinum overflow-hidden relative">
+    <section className="py-14 px-4 sm:px-6 lg:px-8 bg-createc-platinum overflow-hidden relative">
       <style>
         {`
           @keyframes scroll {
@@ -40,24 +40,30 @@ const OurClientsCarousel = () => {
         `}
       </style>
 
-      <h2 className="text-4xl font-bold text-center mb-8">Our Clients</h2>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-createc-orange mb-10">
+        Our Clients
+      </h2>
+
       <div className="relative w-full overflow-hidden">
         <div
           className={`flex whitespace-nowrap ${
-            isMobile ? 'animate-scroll-fast' : 'animate-scroll'
+            isMobile ? "animate-scroll-fast" : "animate-scroll"
           }`}
         >
           {repeatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 flex items-center justify-center "
+              className="flex-shrink-0 flex items-center justify-center px-4"
               style={{
-                width: isMobile ? '120px' : '256px', // slightly larger mobile icons
-                height: isMobile ? '90px' : '192px',
-                marginRight: '0px',
+                width: isMobile ? "200px" : "280px",
+                height: isMobile ? "180px" : "200px",
               }}
             >
-              <img src={logo} alt={`Client ${index + 1}`} className="max-h-full max-w-full" />
+              <img
+                src={logo}
+                alt={`Client ${index + 1}`}
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
           ))}
         </div>

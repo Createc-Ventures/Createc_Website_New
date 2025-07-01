@@ -22,7 +22,7 @@ const videos = [
 ];
 
 export default function VideoCarousel() {
-  const duplicatedVideos = [...videos, ...videos]; // Duplicate for seamless loop
+  const duplicatedVideos = [...videos, ...videos];
 
   return (
     <div className="relative overflow-hidden w-full bg-createc-platinum py-8">

@@ -17,11 +17,11 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
     
-    { name: 'Team', href: '#team' },
-    { name: 'Our Work', href: '#portfolio' },
+    { name: 'Team', href: '/#team' },
+    { name: 'Our Work', href: '/#portfolio' },
     
   ];
 

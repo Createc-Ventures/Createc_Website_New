@@ -4,21 +4,21 @@ import { useSwipeable } from "react-swipeable";
 import { Megaphone, Cpu, Brush, TrendingUp, Camera, PenTool, Database, Code, MonitorSmartphone, ShieldCheck } from "lucide-react";
 
 const marketingServices = [
-  { id: 1, title: "Product marketing", icon: <TrendingUp className="w-6 h-6 text-pink-600" />, desc: "Crafting magnetic brand identities that resonate and convert." },
-  { id: 2, title: "Brand management", icon: <Camera className="w-6 h-6 text-pink-600" />, desc: "Visually explosive content tailored for impact." },
-  { id: 3, title: "Seo and paid ads", icon: <Megaphone className="w-6 h-6 text-pink-600" />, desc: "Platform-native tactics that drive conversations and conversions." },
-  { id: 4, title: "Content management", icon: <Brush className="w-6 h-6 text-pink-600" />, desc: "UI/UX visuals engineered for visual dominance." },
-  { id: 5, title: "Marketing automation", icon: <PenTool className="w-6 h-6 text-pink-600" />, desc: "Punchy words that sell, convert, and compel." },
-  { id: 6, title: "User acquisition and growth", icon: <TrendingUp className="w-6 h-6 text-pink-600" />, desc: "Strategic collabs with high-reach creators." }
+  { id: 1, title: "Product marketing", icon: <TrendingUp className="w-6 h-6 text-createc-yellow" />, desc: "Strategic narratives that drive product adoption and customer obsession." },
+  { id: 2, title: "Brand management", icon: <Camera className="w-6 h-6 text-createc-yellow" />, desc: "Crafting iconic brand identities that lead markets and spark loyalty." },
+  { id: 3, title: "Seo and paid ads", icon: <Megaphone className="w-6 h-6 text-createc-yellow" />, desc: "Precision targeting that ranks, converts, and scales visibility." },
+  { id: 4, title: "Content management", icon: <Brush className="w-6 h-6 text-createc-yellow" />, desc: "Seamless content orchestration that fuels engagement and retention." },
+  { id: 5, title: "Marketing automation", icon: <PenTool className="w-6 h-6 text-createc-yellow" />, desc: "Intelligent workflows that nurture leads and accelerate pipelines." },
+  { id: 6, title: "User acquisition and growth", icon: <TrendingUp className="w-6 h-6 text-createc-yellow" />, desc: "Data-driven growth loops that supercharge user expansion." }
 ];
 
 const techServices = [
-  { id: 1, title: "AI & Blockchain Development", icon: <MonitorSmartphone className="w-6 h-6 text-blue-600" />, desc: "Cross-platform mobile apps built for scale." },
-  { id: 2, title: "Full Stack Software Solutions", icon: <Database className="w-6 h-6 text-blue-600" />, desc: "Microservice and monolith systems with uptime in mind." },
-  { id: 3, title: "Mobile & Web Development", icon: <Code className="w-6 h-6 text-blue-600" />, desc: "CI/CD pipelines, containers, and cloud infra at hyperspeed." },
-  { id: 4, title: "Product & Saas Solution", icon: <Cpu className="w-6 h-6 text-blue-600" />, desc: "Machine learning + APIs for smart, reactive systems." },
-  { id: 5, title: "Research and emerging tech", icon: <ShieldCheck className="w-6 h-6 text-blue-600" />, desc: "Vulnerability-proof strategies that secure user trust." },
-  { id: 6, title: "System Architecture", icon: <Code className="w-6 h-6 text-blue-600" />, desc: "Plug-and-play endpoints for seamless data exchange." }
+  { id: 1, title: "AI & Blockchain Development", icon: <MonitorSmartphone className="w-6 h-6 text-createc-yellow" />, desc: "Future-first solutions powered by intelligence and immutability." },
+  { id: 2, title: "Full Stack Software Solutions", icon: <Database className="w-6 h-6 text-createc-yellow" />, desc: "End-to-end engineering that turns vision into velocity." },
+  { id: 3, title: "Mobile & Web Development", icon: <Code className="w-6 h-6 text-createc-yellow" />, desc: "Responsive, robust, and ready for scale—wherever users are." },
+  { id: 4, title: "Product & Saas Solution", icon: <Cpu className="w-6 h-6 text-createc-yellow" />, desc: "Scalable platforms built to transform industries." },
+  { id: 5, title: "Research and emerging tech", icon: <ShieldCheck className="w-6 h-6 text-createc-yellow" />, desc: "Exploring the edge to build what’s next." },
+  { id: 6, title: "System Architecture", icon: <Code className="w-6 h-6 text-createc-yellow" />, desc: "Structuring scalable backbones for tomorrow’s tech ecosystems." }
 ];
 
 const ServiceCarousel = ({ items, color }) => {
@@ -46,6 +46,7 @@ const ServiceCarousel = ({ items, color }) => {
   };
 
   return (
+    
     <div {...swipeHandlers} className="relative h-48 overflow-hidden">
       {items.map((item, i) => (
         <motion.div
@@ -66,16 +67,17 @@ const ServiceCarousel = ({ items, color }) => {
 
 export default function MobileServices() {
   return (
-    <div className="w-full px-4 py-6 space-y-12">
+    <div className="w-full px-4 py-6 space-y-12 bg-createc-platinum">
       <div>
-        <h2 className="text-xl font-bold mb-4 text-pink-700">Marketing Services</h2>
+        <h2 className="text-xl font-bold mb-4 text-createc-orange">Marketing Services</h2>
         <ServiceCarousel items={marketingServices} color="pink" />
       </div>
 
       <div>
-        <h2 className="text-xl font-bold mb-4 text-blue-700">Tech Services</h2>
+        <h2 className="text-xl font-bold mb-4 text-createc-orange">Tech Services</h2>
         <ServiceCarousel items={techServices} color="blue" />
       </div>
     </div>
   );
 }
+

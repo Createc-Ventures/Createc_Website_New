@@ -25,7 +25,7 @@ const projects = [
     image: "/assets/img/Skor/cover.png",
     challenge: "Skor AI needed to ensure product stability, increase brand awareness, and scale its user base efficiently, all within tight timelines and a competitive AI market.",
     solution: "We delivered robust QA Testing to ensure a seamless user experience. Our Social Media strategy built strong brand presence, while targeted User Acquisition campaigns brought in high-quality users and drove growth.",
-    duration: "3 months",
+    duration: "2 months",
     teamSize: "2 developers",
     tags: ["QA Testing","Social Media","User Aquisition"],
     

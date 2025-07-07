@@ -26,8 +26,8 @@ const projects = [
     image: "/assets/img/AAX/Cover.png",
     challenge: "AAXGAMING faced difficulty establishing a strong brand presence in a saturated gaming market. Their content lacked consistency and failed to engage their target audience effectively, limiting their reach and community growth.",
     solution: "We developed a cohesive branding strategy and delivered high-quality, audience-specific content that resonated with the gaming community. By aligning visual identity with brand values and optimizing content for engagement, we significantly boosted their visibility, audience retention, and brand loyalty.",
-    duration: "3 months",
-    teamSize: "2 developers",
+    duration: "2 months",
+    teamSize: "Content Writers, Video Editor",
     tags: ["Social Media", "Video Production"],
     
   },

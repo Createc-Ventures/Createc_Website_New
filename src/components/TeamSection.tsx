@@ -27,6 +27,7 @@ const TeamSection = () => {
       description:
         "With 5 years of expertise in team management, marketing, content, and growth strategy, leading initiatives that drive brand presence and business expansion.",
     },
+    
   ];
 
   return (

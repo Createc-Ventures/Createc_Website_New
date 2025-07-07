@@ -19,7 +19,7 @@ const AboutUs = () => {
           </p>
           <p>
             <a
-              href="https://www.linkedin.com/company/createc-solutions-llp/posts/?feedView=all"
+              href="/aboutus"
               className="text-base sm:text-lg text-createc-orange hover:text-createc-yellow transition-colors"
             >
               Learn More

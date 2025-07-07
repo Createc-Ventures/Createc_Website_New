@@ -25,7 +25,7 @@ const projects = [
     image: "/assets/img/gamedome/Cover.webp",
     challenge: "Gamedome struggled to differentiate itself in a highly competitive gaming market due to inconsistent branding and a lack of engaging content. This limited their ability to attract and retain a loyal audience.",
     solution: "We addressed this by creating a consistent visual identity and producing tailored content that resonated with their audience. This approach helped strengthen brand recognition and foster a more engaged gaming community.",
-    duration: "3 months",
+    duration: "2 months",
     teamSize: "Content Writers, Video Editor",
     tags: ["Video Production", "Social Media","Branding"],
     

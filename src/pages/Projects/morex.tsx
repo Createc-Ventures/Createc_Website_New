@@ -25,7 +25,7 @@ const projects = [
     image: "/assets/img/Morex/cover.webp",
     challenge: "Morex Asset Management faced challenges with a fragmented digital presence and inefficient client management processes. Their existing systems lacked integration, resulting in delayed responses, missed leads, and a subpar user experience on their digital platforms.",
     solution: "We provided a fully customized website backed by seamless Salesforce and CRM integration. This unified digital ecosystem enabled real-time lead tracking, automated follow-ups, and an intuitive user interface, transforming their customer journey and streamlining internal operations for scalable growth.",
-    duration: "3 months",
+    duration: "2 months",
     teamSize: "2 developers",
     tags: ["React Website", "Salesforce Integration","CRM"],
     

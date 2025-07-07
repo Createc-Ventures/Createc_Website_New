@@ -25,7 +25,7 @@ const projects = [
     image: "/assets/img/Bts/cover.webp",
     challenge: "BTS.Ai needed a compelling online presence to communicate their innovative AI solutions but lacked a cohesive digital identity and engagement strategy across platforms.",
     solution: "We built a modern, user-focused website and executed a targeted social media strategy that boosted engagement and positioned BTS.Ai as a credible voice in the AI space.",
-    duration: "3 months",
+    duration: "2 months",
     teamSize: "2 developers",
     tags: ["QA Testing","Social Media","User Aquisition"],
     

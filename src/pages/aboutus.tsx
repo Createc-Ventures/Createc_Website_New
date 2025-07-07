@@ -1,6 +1,6 @@
 import { HeroCarousel } from '@/components/about/HeroCarousel';
 import { CompanySection } from '@/components/about/CompanySection';
-import { TeamSection } from '@/components/about/TeamSection';
+import TeamSection from '@/components/TeamSection';
 import { ValuesSection } from '@/components/about/ValuesSection';
 import Navbar from '@/components/Navigation';
 import Footer from '@/components/Footer';

@@ -4,25 +4,25 @@ import { Button } from '@/components/ui/button';
 
 const carouselImages = [
   {
-    url: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1200&h=800&fit=crop',
+    url: '/assets/img/Team/1.jpg',
     alt: 'Team collaboration with modern technology',
     title: 'Innovation at Heart',
     subtitle: 'Pushing boundaries with cutting-edge solutions'
   },
   {
-    url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=800&fit=crop',
+    url: '/assets/img/Team/2.jpg',
     alt: 'Team working together in modern office',
     title: 'Collaborative Excellence',
     subtitle: 'Building success through teamwork'
   },
   {
-    url: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=800&fit=crop',
+    url: '/assets/img/Team/3.jpg',
     alt: 'Professional working on laptop',
     title: 'Focused Expertise',
     subtitle: 'Dedicated professionals delivering results'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=800&fit=crop',
+    url: '/assets/img/Team/4.jpg',
     alt: 'Team member working remotely',
     title: 'Global Reach',
     subtitle: 'Connected worldwide, locally focused'
@@ -74,11 +74,9 @@ export const HeroCarousel = () => {
             About Us
           </h1>
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <h2 className="text-2xl md:text-4xl font-semibold mb-4">
-              {carouselImages[currentSlide].title}
-            </h2>
+            
             <p className="text-lg md:text-xl opacity-90">
-              {carouselImages[currentSlide].subtitle}
+              We’re a passionate team building innovative tech to solve real-world problems, driven by purpose, powered by creativity, and focused on impact.
             </p>
           </div>
         </div>

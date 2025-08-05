@@ -64,7 +64,7 @@ const Footer = () => {
                   ))}
                 </ul>
                 <ul className="space-y-2">
-                  {['Team', 'Process', 'Our Work'].map((item, index) => (
+                  {['Team', 'Our Work'].map((item, index) => (
                     <li key={index}>
                       <a href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-sm text-gray-800 hover:text-black transition-colors">
                         {item}

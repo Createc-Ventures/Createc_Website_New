@@ -81,7 +81,7 @@ const OurWork = () => {
       {/* Background Gradient */}
       {/* Hero Section */}
       <div className="text-center py-32">
-        <h1 className="text-5xl font-bold text-createc-orange mb-4">Our Work</h1>
+        <h1 className="text-6xl font-bold text-createc-orange mb-4">Our Work</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Explore our collection of carefully crafted projects that showcase innovation, creativity, and technical excellence across various industries.
         </p>

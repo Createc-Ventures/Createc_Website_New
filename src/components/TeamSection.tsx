@@ -18,15 +18,7 @@ const TeamSection = () => {
       image: "assets/img/3.png",
       description:
         "Bringing 6+ years of experience in product, operations, marketing, and growth; driving strategy and execution to scale impactful solutions.",
-    },
-    {
-      name: "Shivam Lingade",
-      role: "CMO",
-      link: "https://www.linkedin.com/in/shivam-lingade-996b12215/",
-      image: "assets/img/2.png",
-      description:
-        "With 5 years of expertise in team management, marketing, content, and growth strategy, leading initiatives that drive brand presence and business expansion.",
-    },
+    }
     
   ];
 
@@ -49,18 +41,18 @@ const TeamSection = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
           {team.map((member, index) => (
             <div
               key={index}
               className="bg-white/30 backdrop-blur-lg border border-white/30 rounded-xl shadow-lg overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(236,124,48,0.7)]"
             >
               {/* Image */}
-              <div className="relative h-60 sm:h-64 overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-createc-orange/70 to-transparent opacity-0 hover:opacity-60 transition-opacity duration-500 rounded-t-xl"></div>
               </div>
